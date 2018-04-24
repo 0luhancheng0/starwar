@@ -90,6 +90,7 @@ public abstract class Actor<T extends ActionInterface> extends Entity {
 	 * 
 	 * @return an <code>ArrayList</code> containing this <code>Actor</code>'s <code>Actions</code>
 	 */
+	//TODO: it haven't been used anywhere, it should be checked in canDo method in starwar.action.attack
 	public ArrayList<T> getActions() {
 		ArrayList<T> newActions = new ArrayList<T>();
 		for (T action: actions)

@@ -1,0 +1,8 @@
+ERROR - 01:00:30: java.net.MalformedURLException: unknown protocol: pathmap
+WARNING - 01:02:36: Convert FIT2099_Assignment_Base_2018
+ERROR - 01:02:36: java.net.MalformedURLException: unknown protocol: pathmap
+ERROR - 01:03:07: java.net.MalformedURLException: unknown protocol: pathmap
+ERROR - 01:03:18: java.net.MalformedURLException: unknown protocol: pathmap
+ERROR - 01:03:29: java.net.MalformedURLException: unknown protocol: pathmap
+WARNING - 01:03:52: First conversion pass
+ERROR - 01:03:52: java.net.MalformedURLException: unknown protocol: pathmap
