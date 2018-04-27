@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <type>com.baselet.element.old.allinone.SequenceDiagram</type>
+    <coordinates>
+      <x>162</x>
+      <y>66</y>
+      <w>600</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>title: droid does not have owner
+_Droid~id1_|_EntityManager~id2_|_SWActor~id3_|_Location~id4_|_Grid~id5_|_Move~id6_
+
+id1-&gt;&gt;id2:whereIs(Droid d)
+id2-&gt;id1:Location
+
+id1-&gt;&gt;id1:ifInBadLand(Location)
+
+id1-&gt;&gt;id1:takeDamage()
+
+id1-&gt;&gt;id1: ifOwned()
+
+id1-&gt;&gt;id5: getRandomBearing()
+id5-&gt;id1: CompassBearing c
+
+
+
+id1-&gt;&gt;id1: isDirectionAvailable(CompassBearing c)
+id1-&gt;&gt;id4: hasExit(Compassbearing c)
+id4-&gt;id1: boolean
+
+id1-&gt;&gt;id6: Move(CompassBearing c)
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.allinone.SequenceDiagram</type>
+    <coordinates>
+      <x>54</x>
+      <y>354</y>
+      <w>390</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>title: droid does have owner
+_Droid~id1_|_EntityManager~id2_|_Location~id4_|_Move~id6_
+
+id1-&gt;&gt;id2:whereIs(Droid d)
+id2-&gt;id1:Location
+
+id1-&gt;&gt;id1:ifInBadLand(Location)
+id1-&gt;&gt;id1:takeDamage()
+id1-&gt;&gt;id1: ifOwned()
+
+id1-&gt;&gt;id2: whereIs(SWActor a)
+id2-&gt;id1: Location
+
+id1-&gt;&gt;id4: getNeighbour(Direction d) for all direction
+id1-&gt;&gt;id1: ifOwnerInNeighbour()
+
+id1-&gt;&gt;id1: isDirectionAvailable(CompassBearing c)
+id1-&gt;&gt;id4: hasExit(Compassbearing c)
+id4-&gt;id1: boolean
+
+id1-&gt;&gt;id6: Move(CompassBearing c)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.allinone.SequenceDiagram</type>
+    <coordinates>
+      <x>510</x>
+      <y>402</y>
+      <w>354</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>title: assign ownership between droid and owner
+_Droid~id1_|_Own~id2_|_SWActor~id3_
+
+id3-&gt;&gt;id1: ifOwned()
+id1-&gt;id3: boolean
+
+id3-&gt;&gt;id2: setOwnership(Droid d, SWActor a)
+id2-&gt;id1: setOwner(SWActor a)
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
