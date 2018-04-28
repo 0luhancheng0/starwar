@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>450</x>
-      <y>306</y>
+      <y>234</y>
       <w>342</w>
       <h>171</h>
     </coordinates>
@@ -16,9 +16,9 @@ Package::starwars.entities
 --
 +ifOwned(): boolean
 +ifDirectionAvailable(CompassBearing c): boolean
-+ifOwnerInNeighbor(): boolean
++ifOwnerInNeighbour(): boolean
 +takeDamageInBadLand(): void
-+getRelativeLocation(): 
++checkIfMobile(int hitpoint): boolean
 
 </panel_attributes>
     <additional_attributes/>
@@ -27,7 +27,7 @@ Package::starwars.entities
     <id>UMLClass</id>
     <coordinates>
       <x>504</x>
-      <y>648</y>
+      <y>576</y>
       <w>90</w>
       <h>36</h>
     </coordinates>
@@ -38,7 +38,7 @@ Package::starwars.entities
     <id>Relation</id>
     <coordinates>
       <x>531</x>
-      <y>468</y>
+      <y>396</y>
       <w>72</w>
       <h>198</h>
     </coordinates>
@@ -50,7 +50,7 @@ extends</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>945</x>
-      <y>360</y>
+      <y>288</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -61,7 +61,7 @@ extends</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>783</x>
-      <y>360</y>
+      <y>288</y>
       <w>180</w>
       <h>45</h>
     </coordinates>
@@ -75,21 +75,22 @@ m2=0..1
     <id>UMLClass</id>
     <coordinates>
       <x>792</x>
-      <y>630</y>
-      <w>189</w>
+      <y>558</y>
+      <w>306</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>Own
 Package::starwars.actions
 --
-+setupOwner(Droid droid, SWActor actor): void</panel_attributes>
++setupOwner(Droid d, SWActor a): void
++checkIfDroidHaveOwner(Droid d): boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>873</x>
-      <y>378</y>
+      <y>306</y>
       <w>117</w>
       <h>270</h>
     </coordinates>
@@ -101,7 +102,7 @@ use</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>837</x>
-      <y>756</y>
+      <y>684</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -112,7 +113,7 @@ use</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>783</x>
-      <y>369</y>
+      <y>297</y>
       <w>45</w>
       <h>315</h>
     </coordinates>
@@ -124,7 +125,7 @@ use</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>873</x>
-      <y>693</y>
+      <y>621</y>
       <w>72</w>
       <h>81</h>
     </coordinates>
@@ -136,7 +137,7 @@ extends</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>27</x>
-      <y>360</y>
+      <y>288</y>
       <w>288</w>
       <h>108</h>
     </coordinates>
@@ -152,7 +153,7 @@ Package::edu.monash.fit2099.gridworld
     <id>Relation</id>
     <coordinates>
       <x>306</x>
-      <y>378</y>
+      <y>306</y>
       <w>162</w>
       <h>36</h>
     </coordinates>
@@ -164,7 +165,7 @@ use</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>360</x>
-      <y>72</y>
+      <y>0</y>
       <w>378</w>
       <h>72</h>
     </coordinates>
@@ -178,7 +179,7 @@ Package::edu.monash.fit2099.simulator.matter
     <id>Relation</id>
     <coordinates>
       <x>540</x>
-      <y>135</y>
+      <y>63</y>
       <w>45</w>
       <h>189</h>
     </coordinates>
@@ -190,7 +191,7 @@ use</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>144</y>
+      <y>72</y>
       <w>315</w>
       <h>90</h>
     </coordinates>
@@ -205,7 +206,7 @@ Package::edu.monash.fit2099.simulator.space
     <id>UMLClass</id>
     <coordinates>
       <x>171</x>
-      <y>576</y>
+      <y>504</y>
       <w>90</w>
       <h>36</h>
     </coordinates>
@@ -216,7 +217,7 @@ Package::edu.monash.fit2099.simulator.space
     <id>Relation</id>
     <coordinates>
       <x>306</x>
-      <y>171</y>
+      <y>99</y>
       <w>162</w>
       <h>180</h>
     </coordinates>
@@ -229,7 +230,7 @@ m1=1
     <id>Relation</id>
     <coordinates>
       <x>252</x>
-      <y>423</y>
+      <y>351</y>
       <w>216</w>
       <h>189</h>
     </coordinates>

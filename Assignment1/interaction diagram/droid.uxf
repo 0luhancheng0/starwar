@@ -4,10 +4,10 @@
   <element>
     <type>com.baselet.element.old.allinone.SequenceDiagram</type>
     <coordinates>
-      <x>162</x>
-      <y>66</y>
+      <x>186</x>
+      <y>30</y>
       <w>600</w>
-      <h>264</h>
+      <h>282</h>
     </coordinates>
     <panel_attributes>title: droid does not have owner
 _Droid~id1_|_EntityManager~id2_|_SWActor~id3_|_Location~id4_|_Grid~id5_|_Move~id6_
@@ -30,6 +30,7 @@ id1-&gt;&gt;id1: isDirectionAvailable(CompassBearing c)
 id1-&gt;&gt;id4: hasExit(Compassbearing c)
 id4-&gt;id1: boolean
 
+id1-&gt;&gt;id1: checkIfMobile(int hitpoint)
 id1-&gt;&gt;id6: Move(CompassBearing c)
 
 
@@ -40,10 +41,10 @@ id1-&gt;&gt;id6: Move(CompassBearing c)
   <element>
     <type>com.baselet.element.old.allinone.SequenceDiagram</type>
     <coordinates>
-      <x>54</x>
-      <y>354</y>
+      <x>78</x>
+      <y>318</y>
       <w>390</w>
-      <h>300</h>
+      <h>318</h>
     </coordinates>
     <panel_attributes>title: droid does have owner
 _Droid~id1_|_EntityManager~id2_|_Location~id4_|_Move~id6_
@@ -65,6 +66,7 @@ id1-&gt;&gt;id1: isDirectionAvailable(CompassBearing c)
 id1-&gt;&gt;id4: hasExit(Compassbearing c)
 id4-&gt;id1: boolean
 
+id1-&gt;&gt;id1: checkIfMobile(int hitpoint)
 id1-&gt;&gt;id6: Move(CompassBearing c)
 
 </panel_attributes>
@@ -73,8 +75,8 @@ id1-&gt;&gt;id6: Move(CompassBearing c)
   <element>
     <type>com.baselet.element.old.allinone.SequenceDiagram</type>
     <coordinates>
-      <x>510</x>
-      <y>402</y>
+      <x>534</x>
+      <y>366</y>
       <w>354</w>
       <h>138</h>
     </coordinates>
