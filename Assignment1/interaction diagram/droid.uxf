@@ -4,8 +4,8 @@
   <element>
     <type>com.baselet.element.old.allinone.SequenceDiagram</type>
     <coordinates>
-      <x>186</x>
-      <y>30</y>
+      <x>0</x>
+      <y>0</y>
       <w>600</w>
       <h>282</h>
     </coordinates>
@@ -41,8 +41,8 @@ id1-&gt;&gt;id6: Move(CompassBearing c)
   <element>
     <type>com.baselet.element.old.allinone.SequenceDiagram</type>
     <coordinates>
-      <x>78</x>
-      <y>318</y>
+      <x>0</x>
+      <y>330</y>
       <w>390</w>
       <h>318</h>
     </coordinates>
@@ -75,8 +75,8 @@ id1-&gt;&gt;id6: Move(CompassBearing c)
   <element>
     <type>com.baselet.element.old.allinone.SequenceDiagram</type>
     <coordinates>
-      <x>534</x>
-      <y>366</y>
+      <x>462</x>
+      <y>330</y>
       <w>354</w>
       <h>138</h>
     </coordinates>

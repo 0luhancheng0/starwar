@@ -43,7 +43,6 @@ public class LightSaber extends SWEntity {
 		this.hitpoints = 100000; // start with a nice powerful, sharp axe
 		
 		this.addAffordance(new Take(this, m));//add the take affordance so that the LightSaber can be taken by SWActors
-		// TODO: if player's force is less than X(int), player cannot use lightsaber as a weapon
 		this.capabilities.add(Capability.WEAPON);// it's a weapon.  
 	}
 	

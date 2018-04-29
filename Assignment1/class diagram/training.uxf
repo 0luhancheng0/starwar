@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>240</y>
+      <x>0</x>
+      <y>310</y>
       <w>240</w>
       <h>80</h>
     </coordinates>
@@ -18,8 +18,8 @@ package::starwars.entities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>530</x>
-      <y>240</y>
+      <x>410</x>
+      <y>310</y>
       <w>250</w>
       <h>80</h>
     </coordinates>
@@ -34,8 +34,8 @@ package::starwars.entities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>260</y>
+      <x>230</x>
+      <y>330</y>
       <w>200</w>
       <h>40</h>
     </coordinates>
