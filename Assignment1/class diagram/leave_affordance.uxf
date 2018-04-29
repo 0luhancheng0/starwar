@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>322</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>Leave
+--
++priority: int
+--
++leave(Entities e): void
++canDo(SWActor a): boolean
++getDescription(): String
++getActorLocation(): Location
+// getActorLocation will call whereis() in EntityManager to determine where the item should be dropped
++act(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>385</x>
+      <y>371</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>SWAffordance</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>364</y>
+      <w>196</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>371</x>
+      <y>231</y>
+      <w>98</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>SWActionInterface
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>203</x>
+      <y>238</y>
+      <w>231</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>63</x>
+      <y>525</y>
+      <w>147</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>EntityManager
+--
+whereIs(SWActor a): Location
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>448</y>
+      <w>35</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+use</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

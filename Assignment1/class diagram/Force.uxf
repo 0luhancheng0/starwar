@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
-      <y>280</y>
+      <x>120</x>
+      <y>390</y>
       <w>390</w>
       <h>190</h>
     </coordinates>
@@ -21,8 +21,8 @@ Package::starwars
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>180</x>
-      <y>40</y>
+      <x>270</x>
+      <y>150</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -32,8 +32,8 @@ Package::starwars
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>60</y>
+      <x>310</x>
+      <y>170</y>
       <w>50</w>
       <h>240</h>
     </coordinates>
