@@ -3,6 +3,7 @@ package starwars.entities;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.Capability;
 import starwars.SWEntity;
+import starwars.actions.Leave;
 import starwars.actions.Take;
 
 /**
@@ -67,6 +68,14 @@ public class LightSaber extends SWEntity {
 	@Override
 	public String getSymbol() {
 		return "†";
+	}
+	
+	public String getShortDescription() {
+		return this.shortDescription;
+	}
+	
+	public String getLongDescription() {
+		return this.longDescription;
 	}
 	
 	
