@@ -62,6 +62,9 @@ public class Leave extends SWAffordance{
 		target = a.getItemCarried();
 		if (target instanceof SWEntityInterface) {
 			a.setItemCarried(null);
+			
+			// It is not a good idea to create a new world in order to get the location 
+			// but i cannot extend SWAction to make use of the entity manager inside that like what Move class did
 			SWWorld world = new SWWorld();
 			SWAction.getEntitymanager().setLocation((SWEntityInterface)target, world.getEntityManager().whereIs(a));
 			
