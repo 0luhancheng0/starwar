@@ -1,10 +1,12 @@
 package starwars.actions;
 
+import edu.monash.fit2099.simulator.matter.EntityManager;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.SWAction;
 import starwars.SWActor;
 import starwars.SWAffordance;
 import starwars.SWEntityInterface;
+import starwars.SWLocation;
 import starwars.SWWorld;
 /**
  * <code>SWAction</code> that lets a <code>SWActor</code> pick up an object.
@@ -63,10 +65,9 @@ public class Leave extends SWAffordance{
 		if (target instanceof SWEntityInterface) {
 			a.setItemCarried(null);
 			
-			// It is not a good idea to create a new world in order to get the location 
-			// but i cannot extend SWAction to make use of the entity manager inside that like what Move class did
-			SWWorld world = new SWWorld();
-			SWAction.getEntitymanager().setLocation((SWEntityInterface)target, world.getEntityManager().whereIs(a));
+			EntityManager<SWEntityInterface, SWLocation> entityManager = SWWorld.getEntitymanager();
+
+			SWAction.getEntitymanager().setLocation((SWEntityInterface)target, entityManager.whereIs(a));
 			
 			//remove the leave affordance
 			target.removeAffordance(this);
