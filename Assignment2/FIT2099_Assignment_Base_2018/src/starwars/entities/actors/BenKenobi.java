@@ -66,4 +66,10 @@ public class BenKenobi extends SWLegend {
 		}
 	}
 
+	/**
+	 * Trains Luke (the player) in order to raise Luke's force ability.
+	 */
+	public void trainLuke() {
+		//TODO
+	}
 }

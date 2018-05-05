@@ -53,6 +53,9 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	/**A set of <code>Capabilities</code> of this <code>SWActor</code>*/
 	private HashSet<Capability> capabilities;
 	
+	/** The force ability of this <code>SWActor</code>. A <code>SWActor</code> with a force value of 0 is unable to use the force*/
+	private int force;
+	
 	/**
 	 * Constructor for the <code>SWActor</code>.
 	 * <p>
@@ -273,8 +276,33 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		/* Actually, that's not the case: all non-movement actions are transferred to newActions before the movements are transferred. --ram */
 	}
 
-
+	/**
+	 * Returns if the <code>SWActor</code> can use the force
+	 * @return false if the <code>SWActor</code> cannot use the force, true otherwise
+	 */
+	public boolean checkForce() {
+		if(this.force == 0)
+			return false;
+		return true;
+	}
 	
+	/**
+	 * Getter for force value.
+	 * @return the <code>SWActor</code> force
+	 */
+	public int getForce() {
+		return this.force;
+	}
 	
+	/**
+	 * Increases the force value of the <code>SWActor</code>. Force value cannot decrease.
+	 */
+	public void gainForce(int increment) {
+		this.force += increment;
+	}
+	
+	public ArrayList<SWActionInterface> getActions() {
+		//TODO
+	}
 	
 }
