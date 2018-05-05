@@ -5,7 +5,7 @@ import starwars.SWActionInterface;
 import starwars.SWActor;
 import starwars.SWAffordance;
 import starwars.SWEntityInterface;
-import starwars.entities.Droid;
+import starwars.entities.actors.Droid;
 
 public class Own extends SWAffordance implements SWActionInterface {
 
