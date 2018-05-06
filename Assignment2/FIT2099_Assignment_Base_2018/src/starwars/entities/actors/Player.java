@@ -98,4 +98,15 @@ public class Player extends SWActor {
 			}
 		}
 	}
+	
+	/**
+	 * Determines if the <code>Player</code> has reached their maximum force value.
+	 * Default max value is set at 100.
+	 * @return true if <code>Player</code> has reached the maximum force value possible, false otherwise 
+	 */
+	public boolean checkForceMax() {
+		if(this.force == 100)
+			return true;
+		return false;
+	}
 }
