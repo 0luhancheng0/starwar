@@ -285,7 +285,16 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 			return false;
 		return true;
 	}
-	
+	/**
+	 * Determines if the <code>Player</code> has reached their maximum force value.
+	 * Default max value is set at 100.
+	 * @return true if <code>Player</code> has reached the maximum force value possible, false otherwise 
+	 */
+	public boolean checkForceMax() {
+		if(this.force == 100)
+			return true;
+		return false;
+	}
 	/**
 	 * Getter for force value.
 	 * @return the <code>SWActor</code> force
@@ -301,8 +310,5 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		this.force += increment;
 	}
 	
-	public ArrayList<SWActionInterface> getActions() {
-		//TODO
-	}
-	
+
 }
