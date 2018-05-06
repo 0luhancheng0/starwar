@@ -186,8 +186,9 @@ public class SWWorld extends World {
 		// A droid
 		Droid droid = new Droid(100, iface, this);
 		droid.setSymbol("d");
-		loc = myGrid.getLocationByCoordinates(5, 8);
+		loc = myGrid.getLocationByCoordinates(0, 0);
 		entityManager.setLocation(droid, loc);
+		droid.setOwner(luke); // i set the owner of dorid as luke at the start of game, it can be deleted at any point
 
 	}
 

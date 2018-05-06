@@ -23,7 +23,7 @@ public class Own extends SWAffordance implements SWActionInterface {
 
 	@Override
 	public void act(SWActor a) {
-		((Droid) this.target).setupOwner(a);
+		((Droid) this.target).setOwner(a);
 		this.target.removeAffordance(this);
 		// TODO Auto-generated method stub
 

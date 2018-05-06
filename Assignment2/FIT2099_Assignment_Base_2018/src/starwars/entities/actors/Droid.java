@@ -14,6 +14,7 @@ import starwars.actions.Own;
 
 public class Droid extends SWActor {
 	private SWActor owner;
+	Direction heading = null;
 	/**
 	 * Create a Droid. Droid will not move if it doesn't have owner
 	 * if it is in the same location as its owner, it will stay there. If the droid’s owner is in a neighbouring 
@@ -43,7 +44,7 @@ public class Droid extends SWActor {
 	
 
 	
-	public void setupOwner(SWActor a) {
+	public void setOwner(SWActor a) {
 		owner = a; // Unfortunately there is a unavoidable privacy leak exist, but i don't know how to fix this
 	}
 	
@@ -67,12 +68,11 @@ public class Droid extends SWActor {
 	@Override
 	public void act() {
 		// if the droid is ownered by other SWActor
+		Location droidLocation = this.world.find(this);
 		if (this.isOwned()) {
 			Move myMove = null; 
 			ArrayList<Direction> possibleDirections = new ArrayList<Direction>();
 			Location ownerLocation = this.world.find(this.owner);
-			Location droidLocation = this.world.find(this);
-			
 			// if owner is not in the same location with droid
 			if (ownerLocation != droidLocation) {
 				
@@ -80,6 +80,7 @@ public class Droid extends SWActor {
 				for (CompassBearing d : CompassBearing.values()) {
 					if (SWWorld.getEntitymanager().seesExit(this, d)) {
 						possibleDirections.add(d);
+						
 					}
 					
 					// move to owner's direction if owner is in the neighbour of the droid
@@ -88,20 +89,39 @@ public class Droid extends SWActor {
 						myMove = new Move(d, messageRenderer, world);
 						
 					}
+				}
 				// it droid cannot find its owner
 				if (myMove == null) {
 					// randomly get a direction and move towards it
-					Direction heading = possibleDirections.get((int) (Math.floor(Math.random() * possibleDirections.size())));
+					if (heading == null || !(SWWorld.getEntitymanager().seesExit(this, heading)))
+					{
+						heading = possibleDirections.get((int) (Math.floor(Math.random() * possibleDirections.size())));
+					}
+					
 					myMove = new Move(heading, messageRenderer, world);
 					
 					
 					}
 				
-				}
+				
 				scheduler.schedule(myMove, this, 1);
 			}
 			
 
+		}
+		boolean inBadLand = false;
+		for (int row = 5; row < 8; row++) {
+			for (int col = 4; col < 7; col++) {
+				if (droidLocation == world.getGrid().getLocationByCoordinates(col, row)) {
+					inBadLand = true;
+				}
+				
+				
+			}
+		}
+		if (inBadLand) {
+			this.takeDamage(5);
+			say("the droid lost 5 health in badland, current hitpoint: " + this.getHitpoints());
 		}
 		
 		
