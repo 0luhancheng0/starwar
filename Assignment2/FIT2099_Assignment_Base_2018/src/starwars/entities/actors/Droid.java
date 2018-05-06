@@ -87,19 +87,18 @@ public class Droid extends SWActor {
 		
 						myMove = new Move(d, messageRenderer, world);
 						
-						
 					}
 				// it droid cannot find its owner
 				if (myMove == null) {
-					
 					// randomly get a direction and move towards it
 					Direction heading = possibleDirections.get((int) (Math.floor(Math.random() * possibleDirections.size())));
 					myMove = new Move(heading, messageRenderer, world);
 					
-				}
-				scheduler.schedule(myMove, this, 1);
+					
+					}
 				
 				}
+				scheduler.schedule(myMove, this, 1);
 			}
 			
 
