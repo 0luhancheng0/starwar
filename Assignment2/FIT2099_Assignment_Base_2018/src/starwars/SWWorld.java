@@ -6,6 +6,7 @@ import edu.monash.fit2099.simulator.space.Direction;
 import edu.monash.fit2099.simulator.space.Location;
 import edu.monash.fit2099.simulator.space.World;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
+import starwars.actions.Own;
 import starwars.actions.Take;
 import starwars.entities.*;
 import starwars.entities.actors.*;
@@ -188,8 +189,11 @@ public class SWWorld extends World {
 		droid.setSymbol("d");
 		loc = myGrid.getLocationByCoordinates(0, 0);
 		entityManager.setLocation(droid, loc);
-		droid.setOwner(luke); // i set the owner of dorid as luke at the start of game, it can be deleted at any point
-
+		
+		// i set the owner of droid as luke at the start of the game
+		droid.setOwner(luke);
+		droid.removeAffordance(new Own(droid, iface));
+		
 	}
 
 	/*
