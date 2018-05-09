@@ -7,7 +7,7 @@ import starwars.SWAffordance;
 import starwars.SWEntityInterface;
 import starwars.entities.actors.Droid;
 
-public class Own extends SWAffordance implements SWActionInterface {
+public class Own extends SWAffordance{
 	/**
 	 * Constructor for the <code>Own</code> Class. Will initialize the message renderer, the target and 
 	 * set the priority of this <code>Action</code> to 1 (lowest priority is 0).
