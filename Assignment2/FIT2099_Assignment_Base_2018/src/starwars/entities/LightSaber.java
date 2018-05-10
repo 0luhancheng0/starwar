@@ -2,6 +2,7 @@ package starwars.entities;
 
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.Capability;
+import starwars.SWActor;
 import starwars.SWEntity;
 import starwars.actions.Leave;
 import starwars.actions.Take;
@@ -79,6 +80,8 @@ public class LightSaber extends SWEntity {
 		return this.longDescription;
 	}
 	
-	
+	public void canUseAsWeapon() {
+		this.capabilities.add(Capability.WEAPON);
+	}
 
 }

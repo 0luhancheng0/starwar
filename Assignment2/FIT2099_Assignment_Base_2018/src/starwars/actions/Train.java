@@ -5,6 +5,7 @@ import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.SWAction;
 import starwars.SWActionInterface;
 import starwars.SWActor;
+import starwars.entities.LightSaber;
 import starwars.entities.actors.BenKenobi;
 import starwars.entities.actors.Player;
 
@@ -49,9 +50,9 @@ public class Train extends SWAction implements SWActionInterface {
 			a.gainForce(100 - a.getForce());
 			a.say("I have gained some force. I have learnt all that I can from Ben.");
 		}
-		
-
-		
+		if (a.getItemCarried() instanceof LightSaber && a.getForce() > 75)
+			((LightSaber)a.getItemCarried()).canUseAsWeapon();
+			
 
 	}
 
