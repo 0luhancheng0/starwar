@@ -42,6 +42,10 @@ public class BenKenobi extends SWLegend {
 		return ben;
 	}
 	
+	public static BenKenobi getBenKenobi() {
+		return ben;
+	}
+	
 	@Override
 	protected void legendAct() {
 
@@ -64,12 +68,5 @@ public class BenKenobi extends SWLegend {
 
 			scheduler.schedule(myMove, this, 1);
 		}
-	}
-
-	/**
-	 * Trains Luke (the player) in order to raise Luke's force ability.
-	 */
-	public void trainLuke() {
-		//TODO
 	}
 }

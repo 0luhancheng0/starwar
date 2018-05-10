@@ -8,6 +8,7 @@ import edu.monash.fit2099.simulator.space.World;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.actions.Own;
 import starwars.actions.Take;
+import starwars.actions.Train;
 import starwars.entities.*;
 import starwars.entities.actors.*;
 
@@ -119,7 +120,8 @@ public class SWWorld extends World {
 		luke.setShortDescription("Luke");
 		entityManager.setLocation(luke, loc);
 		luke.resetMoveCommands(loc);
-		
+		luke.addAction(new Train(iface));
+		luke.gainForce(1);
 		
 		// Beggar's Canyon 
 		for (int col = 3; col < 8; col++) {
