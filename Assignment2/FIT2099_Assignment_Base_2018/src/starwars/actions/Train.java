@@ -6,6 +6,7 @@ import starwars.SWAction;
 import starwars.SWActionInterface;
 import starwars.SWActor;
 import starwars.entities.actors.BenKenobi;
+import starwars.entities.actors.Player;
 
 public class Train extends SWAction implements SWActionInterface {
 
@@ -19,7 +20,14 @@ public class Train extends SWAction implements SWActionInterface {
 	 */
 	@Override
 	public boolean canDo(SWActor a) {
+		if (!(a instanceof Player)) {
+			return false;
+		}
+		if (a.checkForceMax() == true) {
+			return false;
+		}
 		Location bensLocation = SWAction.getEntitymanager().whereIs(BenKenobi.getBenKenobi());
+		
 		if (bensLocation == SWAction.getEntitymanager().whereIs(a))
 			return true;
 		return false;
@@ -30,25 +38,21 @@ public class Train extends SWAction implements SWActionInterface {
 	 */
 	@Override
 	public void act(SWActor a) {
-		if (a.checkForce()) {
-			if (a.checkForceMax() != true) {
-				if (a.getForce() + 5 < 100) {
-					a.gainForce(5);
-					a.say("I have gained some force, but I have much to learn.");
-					a.say("Force value = " + a.getForce());
-				}
-				else {
-					a.gainForce(100 - a.getForce());
-					a.say("I have gained some force. I have learnt all that I can from Ben.");
-				}
-			}
-			else {
-				a.say("I have nothing else to learn!");
-			}
+
+		
+		if (a.getForce() + 90 < 100) {
+			a.gainForce(90);
+//			a.say("I have gained some force, but I have much to learn.");
+			a.say("Force value = " + a.getForce());
 		}
 		else {
-			a.say("I lack the ability to use the force :(");
+			a.gainForce(100 - a.getForce());
+			a.say("I have gained some force. I have learnt all that I can from Ben.");
 		}
+		
+
+		
+
 	}
 
 	/**

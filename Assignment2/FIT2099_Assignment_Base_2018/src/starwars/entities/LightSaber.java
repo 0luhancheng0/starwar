@@ -45,7 +45,7 @@ public class LightSaber extends SWEntity {
 		
 		this.addAffordance(new Take(this, m));//add the take affordance so that the LightSaber can be taken by SWActors
 		
-		//this.capabilities.add(Capability.WEAPON);// it's a weapon.  
+//		this.capabilities.add(Capability.WEAPON);// it's a weapon.  
 	}
 	
 	

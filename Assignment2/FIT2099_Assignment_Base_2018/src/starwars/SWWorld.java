@@ -121,7 +121,7 @@ public class SWWorld extends World {
 		entityManager.setLocation(luke, loc);
 		luke.resetMoveCommands(loc);
 		luke.addAction(new Train(iface));
-		luke.gainForce(1);
+
 		
 		// Beggar's Canyon 
 		for (int col = 3; col < 8; col++) {
