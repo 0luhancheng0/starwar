@@ -298,7 +298,7 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	}
 	/**
 	 * Getter for force value.
-	 * @return the <code>SWActor</code> force
+	 * @return the <code>force</code> of the <code>SWActor</code>
 	 */
 	public int getForce() {
 		return this.force;

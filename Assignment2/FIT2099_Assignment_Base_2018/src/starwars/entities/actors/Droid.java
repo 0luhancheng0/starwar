@@ -14,50 +14,43 @@ import starwars.actions.Own;
 
 public class Droid extends SWActor {
 	
-	/**the <code>owner</code> of the droid, it is initialized to null by default*/
+	/**The <code>owner</code> of the <code>Droid</code>. It is initialized as null by default*/
 	private SWActor owner = null;
 	
 	/**
-	 * the <code>heading</code> represent the dirction of the droid heading to 
+	 * The <code>heading</code> represents the direction that the Droid is heading to .
 	 */
 	Direction heading = null;
 	
 	/**
-	 * Create a Droid. Droid will not move if it doesn't have owner
-	 * if it is in the same location as its owner, it will stay there. If the droid’s owner is in a neighbouring 
-	 * location, it will move to that location.
-	 * If a droid has no owner, it will not move.
-	 * @param hitpoints
-	 *            the number of hit points of this droid. If this
-	 *            decreases to below zero, the droid will be immobile.
-	 * @param m
-	 *            <code>MessageRenderer</code> to display messages.
-	 * @param world
-	 *            the <code>SWWorld</code> world to which this
-	 *            <code>droid</code> belongs to
-	 * 
+	 * Creates a <code>Droid</code>. It will not move if it doesn't have an <code>owner</code>.
+	 * If it is in the same location as its owner, it will stay there. Otherwise, if the 
+	 * <code>Droid<code>'s owner is in a neighbouring location, it will move to that location.
+	 * If a <code>Droid</code> has no owner, it will not move.
+	 * @param hitpoints the hit points of this <code>Droid</code>. If this decreases to below zero, it will be immobile.
+	 * @param m the <code>MessageRenderer</code> to display messages.
+	 * @param world the <code>SWWorld</code> world to which this <code>Droid</code> belongs to
 	 */
 	public Droid(int hitpoints, MessageRenderer m, SWWorld world) {
 		super(null, hitpoints, m, world);
 		owner = null;
-		this.shortDescription = "a droid";
-		this.longDescription = "a smart droid";
+		this.shortDescription = "A droid";
+		this.longDescription = "An intelligent droid.";
 		this.addAffordance(new Own(this, m));
-		// TODO Auto-generated constructor stub
 	}
 
 	
 	/**
-	 * set up the owner of the droid
-	 * @param a the SWActor which droid belong to
+	 * Sets up the <code>owner</code> of the <code>Droid</code>
+	 * @param a the <code>SWActor</code> which this <code>Droid</code> belongs to
 	 */
 	public void setOwner(SWActor a) {
 		owner = a; 
 	}
 	
 	/**
-	 * check if the droid has been owned by another SWActor
-	 * @return true if it has owner, false otherwise
+	 * Checks if the <code>Droid</code> is owned by another <code>SWActor</code>
+	 * @return true if it has an owner, false otherwise
 	 */
 	public boolean isOwned() {
 		return owner != null;
@@ -76,15 +69,18 @@ public class Droid extends SWActor {
 		return this.longDescription;
 	}
 
+	/**
+	 * Determines how the <code>Droid</code> will act.
+	 */
 	@Override
 	public void act() {
-		// if the droid is ownered by other SWActor
+		// if the Droid is owned by a SWActor
 		Location droidLocation = this.world.find(this);
 		if (this.isOwned()) {
 			Move myMove = null; 
 			ArrayList<Direction> possibleDirections = new ArrayList<Direction>();
 			Location ownerLocation = this.world.find(this.owner);
-			// if owner is not in the same location with droid
+			// if owner is not in the same location of this Droid
 			if (ownerLocation != droidLocation) {
 				
 				// build a list of available directions
@@ -94,14 +90,14 @@ public class Droid extends SWActor {
 						
 					}
 					
-					// move to owner's direction if owner is in the neighbour of the droid
+					// move to owner's direction if its owner is in the neighbour locations of the Droid
 					if (droidLocation.getNeighbour(d) == ownerLocation) {
 		
 						myMove = new Move(d, messageRenderer, world);
 						
 					}
 				}
-				// it droid cannot find its owner
+				// if Droid cannot find its owner
 				if (myMove == null) {
 					// randomly get a direction and move towards it
 					if (heading == null || !(SWWorld.getEntitymanager().seesExit(this, heading)))
@@ -121,7 +117,7 @@ public class Droid extends SWActor {
 
 		}
 		
-		// check if the droid is in the bad land before the move
+		// check if the Droid is in BadLands before the move
 		boolean inBadLand = false;
 		for (int row = 5; row < 8; row++) {
 			for (int col = 4; col < 7; col++) {
@@ -133,7 +129,7 @@ public class Droid extends SWActor {
 			}
 		}
 		
-		// decrease the hitpoint of droid if it is in the bad land
+		// decrease the hitpoint of the Droid if it is in BadLands
 		if (inBadLand) {
 			this.takeDamage(5);
 			say("the droid lost 5 health in badland, current hitpoint: " + this.getHitpoints());

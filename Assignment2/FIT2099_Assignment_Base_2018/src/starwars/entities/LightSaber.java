@@ -80,6 +80,10 @@ public class LightSaber extends SWEntity {
 		return this.longDescription;
 	}
 	
+	/**
+	 * Allows the <code>SWActor</code> in possession of this <code>LightSaber</code> to wield it as a weapon. Adds
+	 * the <code>WEAPON</code> capability to this instance of <code>LightSaber</code>.
+	 */
 	public void canUseAsWeapon() {
 		this.capabilities.add(Capability.WEAPON);
 	}

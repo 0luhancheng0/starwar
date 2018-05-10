@@ -21,41 +21,39 @@ public class Leave extends SWAffordance{
 
 	/**
 	 * Constructor for the <code>Leave</code> Class. Will initialize the message renderer, the target and 
-	 * set the priority of this <code>Action</code> to 1 (lowest priority is 0).
+	 * set the priority of this <code>Affordance</code> to 1 (lowest priority is 0).
 	 * 
-	 * @param theTarget a <code>SWEntity</code> that is going to be taken
+	 * @param theTarget a <code>SWEntity</code> that is going to be left
 	 * @param m the message renderer to display messages
 	 */
 	
 	public Leave(SWEntityInterface theTarget, MessageRenderer m) {
 		super(theTarget, m);
 		priority = 1;
-		// TODO Auto-generated constructor stub
 	}
 	
 	
 	/**
-	 * Returns if or not this <code>Leave</code> can be performed by the <code>SWActor a</code>.
+	 * Returns if or not this <code>Leave</code> can be performed by the <code>SWActor</code>.
 	 * <p>
 	 * This method returns true if and only if <code>a</code> is carrying any item already.
 	 *  
 	 * @param 	a the <code>SWActor</code> being queried
-	 * @return 	true if the <code>SWActor</code> is can leave this item, false otherwise
+	 * @return 	true if the <code>SWActor</code> can leave this item, false otherwise
 	 * @see		{@link starwars.SWActor#getItemCarried()}
 	 */
 	@Override
 	public boolean canDo(SWActor a) {
-		// TODO Auto-generated method stub
 		return a.getItemCarried()!=null;
 	}
 	
 	/**
-	 * Perform the <code>Leave</code> action by setting the item carried by the <code>SWActor</code> to the target (
-	 * the <code>SWActor a</code>'s item carried would be the target of this <code>Leave</code>).
+	 * Perform the <code>Leave</code> action by setting the item carried by the <code>SWActor</code> to the target 
+	 * (the <code>SWActor</code>'s item carried would be the target of this <code>Leave</code>).
 	 * <p>
 	 * This method should only be called if the <code>SWActor a</code> is alive.
 	 * 
-	 * @param 	a the <code>SWActor</code> that is leaving the target
+	 * @param 	a the <code>SWActor</code> that is leaving the item
 	 * @see 	{@link #theTarget}
 	 * @see		{@link starwars.SWActor#isDead()}
 	 */
@@ -69,13 +67,12 @@ public class Leave extends SWAffordance{
 
 			SWAction.getEntitymanager().setLocation((SWEntityInterface)target, entityManager.whereIs(a));
 			
-			//remove the leave affordance
+			//remove the Leave affordance
 			target.removeAffordance(this);
 			
-			//add the take affordance
+			//add the Take affordance
 			target.addAffordance(new Take((SWEntityInterface) target, messageRenderer));
 		}
-		// TODO Auto-generated method stub
 
 	}
 	
