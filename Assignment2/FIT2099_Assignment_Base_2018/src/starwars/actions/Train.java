@@ -43,8 +43,7 @@ public class Train extends SWAction implements SWActionInterface {
 		
 		if (a.getForce() + 90 < 100) {
 			a.gainForce(90);
-//			a.say("I have gained some force, but I have much to learn.");
-			a.say("Force value = " + a.getForce());
+			a.say("Current force of " +a.getShortDescription() + " is " + a.getForce());
 		}
 		else {
 			a.gainForce(100 - a.getForce());
