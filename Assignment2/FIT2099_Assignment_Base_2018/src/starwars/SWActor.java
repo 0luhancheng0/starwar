@@ -142,7 +142,6 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		ArrayList<SWActionInterface> actionList = super.getActions();
 		
 		//If the HobbitActor is carrying anything, look for its affordances and add them to the list
-		//TODO: check if the Force is greater than some value to be able to wield the lightsaber
 		SWEntityInterface item = getItemCarried();
 		if (item != null)
 			for (Affordance aff : item.getAffordances())

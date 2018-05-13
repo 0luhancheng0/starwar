@@ -35,6 +35,9 @@ public class Train extends SWAction implements SWActionInterface {
 	 * Determines whether or not <code>Player</code> can be trained by <code>BenKenobi</code>. In order for training
 	 * to happen, the <code>Player</code> must be in the same location as <code>BenKenobi</code>, and must not be
 	 * at their maximum force value. Only <code>Player</code> can be trained, as of now.
+	 * @param a the <code>SWActor</code> that is being queried
+	 * @see 	{@link #theTarget}
+	 * @see		{@link starwars.SWActor#isDead()}
 	 */
 	@Override
 	public boolean canDo(SWActor a) {
@@ -54,15 +57,18 @@ public class Train extends SWAction implements SWActionInterface {
 	/**
 	 * Method to train <code>Player</code> which increases their force value by a currently hardcoded value of 25.
 	 * Training cannot increase <code>Player</code>'s force value above their pre-set maximum value. 
+	 * @param a the <code>SWActor</code> that is going to be trained
 	 */
 	@Override
 	public void act(SWActor a) {
 		
 		
-		
+		// check if the force is less than the maximum for a person can reach
 		if (a.getForce() + FORCE_INCREASE_PER_TRAIN < SWActor.MAX_FORCE) {
 			a.say("This training will increase " + FORCE_INCREASE_PER_TRAIN + " points force for you");
 			a.gainForce(FORCE_INCREASE_PER_TRAIN);
+			
+			// check if the actor a can wield the lightsaber
 			if (a.getForce() >= LightSaber.FORCE_LIMIT)
 			{
 				a.say("Congratulations! you are able to wield lightsaber now");
