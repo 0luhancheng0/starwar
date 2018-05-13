@@ -54,7 +54,14 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	private HashSet<Capability> capabilities;
 	
 	/** The force ability of this <code>SWActor</code>. A <code>SWActor</code> with a force value of 0 is unable to use the force*/
-	private int force;
+	protected int force;
+	
+	/**
+	 * the max value of force a SWActor can possibly reach
+	 */
+	public static final int MAX_FORCE = 100;
+	
+
 	
 	/**
 	 * Constructor for the <code>SWActor</code>.
@@ -292,7 +299,7 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 * @return true if <code>Player</code> has reached the maximum force value possible, false otherwise 
 	 */
 	public boolean checkForceMax() {
-		if(this.force == 100)
+		if(this.force == MAX_FORCE)
 			return true;
 		return false;
 	}
@@ -308,6 +315,7 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 * Increases the force value of the <code>SWActor</code>. Force value cannot decrease.
 	 */
 	public void gainForce(int increment) {
+		assert (this.getForce()+increment <= MAX_FORCE) : "The force of a person can never exceed 100";
 		this.force += increment;
 	}
 	

@@ -43,6 +43,7 @@ public class Player extends SWActor {
 	public Player(Team team, int hitpoints, MessageRenderer m, SWWorld world) {
 		super(team, hitpoints, m, world);
 		humanControlled = true; // this feels like a hack. Surely this should be dynamic
+		this.force = 25; // set the initial force of Luke
 	}
 	
 	/**

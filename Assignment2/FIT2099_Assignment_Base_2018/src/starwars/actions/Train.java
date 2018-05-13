@@ -11,15 +11,24 @@ import starwars.entities.actors.Player;
 
 public class Train extends SWAction implements SWActionInterface {
 	
+	
+	/**
+	 * the force should increase by 25 each training
+	 */
+	private static final int FORCE_INCREASE_PER_TRAIN = 25;
+	
 	/**
 	 * Constructor for the <code>Train</code> class. Initializes the <code>messageRenderer</code> and
 	 * give <code>Train</code> a priority of 1.
 	 * 
 	 * @param m message renderer to display messages
 	 */
+	
+	
 	public Train(MessageRenderer m) {
 		super(m);
 		priority = 1;
+		
 	}
 
 	/**
@@ -44,27 +53,27 @@ public class Train extends SWAction implements SWActionInterface {
 
 	/**
 	 * Method to train <code>Player</code> which increases their force value by a currently hardcoded value of 25.
-	 * Training cannot increase <code>Player</code>'s force value above their pre-set maximum value. If, after the end 
-	 * of a training session, the <code>Player</code> has a force value that is enough to wield a <code>LightSaber</code>, 
-	 * and is currently in possession of one, the <code>Player</code> will be able to use it as a weapon.
+	 * Training cannot increase <code>Player</code>'s force value above their pre-set maximum value. 
 	 */
 	@Override
 	public void act(SWActor a) {
-
 		
-		if (a.getForce() + 25 < 100) {
-			a.gainForce(25);
-			if (a.getForce() >= 75)
+		
+		
+		if (a.getForce() + FORCE_INCREASE_PER_TRAIN < SWActor.MAX_FORCE) {
+			a.say("This training will increase " + FORCE_INCREASE_PER_TRAIN + " points force for you");
+			a.gainForce(FORCE_INCREASE_PER_TRAIN);
+			if (a.getForce() >= LightSaber.FORCE_LIMIT)
 			{
-				a.say("Congratulation! Now you are able to wield lightsaber!");
+				a.say("Congratulations! you are able to wield lightsaber now");
 			}
 			else {
-				a.say("I have gained some force, but I have much to learn.");
+				a.say("you still need to gain " + (LightSaber.FORCE_LIMIT-a.getForce()) + " to use lightsaber as weapon");
 			}
 			
 		}
 		else {
-			a.gainForce(100 - a.getForce());
+			a.gainForce(SWActor.MAX_FORCE - a.getForce());
 			a.say("I have gained some force. I have learnt all that I can from Ben.");
 		}
 		a.say("Current force of " +a.getShortDescription() + " is " + a.getForce());

@@ -21,7 +21,13 @@ import starwars.actions.Take;
  */
 
 public class LightSaber extends SWEntity {
-
+	
+	/**
+	 * the force limit that can make actor wield lightsaber
+	 */
+	
+	public static final int FORCE_LIMIT = 75;
+	
 	/**
 	 * Constructor for the <code>LightSaber</code> class. This constructor will,
 	 * <ul>
@@ -45,8 +51,6 @@ public class LightSaber extends SWEntity {
 		this.hitpoints = 100000; // start with a nice powerful, sharp axe
 		
 		this.addAffordance(new Take(this, m));//add the take affordance so that the LightSaber can be taken by SWActors
-		
-//		this.capabilities.add(Capability.WEAPON);// it's a weapon.  
 	}
 	
 	
@@ -84,8 +88,10 @@ public class LightSaber extends SWEntity {
 	 * Allows the <code>SWActor</code> in possession of this <code>LightSaber</code> to wield it as a weapon. Adds
 	 * the <code>WEAPON</code> capability to this instance of <code>LightSaber</code>.
 	 */
-	public void canUseAsWeapon() {
-		this.capabilities.add(Capability.WEAPON);
+	public void ifCanUseAsWeapon(SWActor a) {
+		if (a.getForce() >= FORCE_LIMIT) {
+			this.capabilities.add(Capability.WEAPON);
+		}
 	}
 
 }

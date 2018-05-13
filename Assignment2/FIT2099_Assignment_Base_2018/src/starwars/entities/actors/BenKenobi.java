@@ -32,10 +32,9 @@ public class BenKenobi extends SWLegend {
 		path = new Patrol(moves);
 		this.setShortDescription("Ben Kenobi");
 		this.setLongDescription("Ben Kenobi, an old man who has perhaps seen too much");
-		this.gainForce(100);
+		this.force = 100; //Ben has full power
 		LightSaber bensweapon = new LightSaber(m);
 		setItemCarried(bensweapon);
-		bensweapon.canUseAsWeapon();
 	}
 
 	public static BenKenobi getBenKenobi(MessageRenderer m, SWWorld world, Direction [] moves) {

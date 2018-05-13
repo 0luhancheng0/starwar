@@ -59,7 +59,6 @@ public class Leave extends SWAffordance{
 	 */
 	@Override
 	public void act(SWActor a) {
-		target = a.getItemCarried();
 		if (target instanceof SWEntityInterface) {
 			a.setItemCarried(null);
 			
