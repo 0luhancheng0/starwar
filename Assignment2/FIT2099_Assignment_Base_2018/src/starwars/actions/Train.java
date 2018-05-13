@@ -54,16 +54,20 @@ public class Train extends SWAction implements SWActionInterface {
 		
 		if (a.getForce() + 25 < 100) {
 			a.gainForce(25);
-			a.say("I have gained some force, but I have much to learn.");
-			a.say("Current force of " +a.getShortDescription() + " is " + a.getForce());
+			if (a.getForce() >= 75)
+			{
+				a.say("Congratulation! Now you are able to wield lightsaber!");
+			}
+			else {
+				a.say("I have gained some force, but I have much to learn.");
+			}
+			
 		}
 		else {
 			a.gainForce(100 - a.getForce());
 			a.say("I have gained some force. I have learnt all that I can from Ben.");
 		}
-		if (a.getItemCarried() instanceof LightSaber && a.getForce() > 75)
-			((LightSaber)a.getItemCarried()).canUseAsWeapon();
-			
+		a.say("Current force of " +a.getShortDescription() + " is " + a.getForce());
 
 	}
 

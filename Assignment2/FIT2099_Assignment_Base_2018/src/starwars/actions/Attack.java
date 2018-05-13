@@ -6,6 +6,7 @@ import starwars.SWActionInterface;
 import starwars.SWActor;
 import starwars.SWAffordance;
 import starwars.SWEntityInterface;
+import starwars.entities.LightSaber;
 
 /**
  * Command to attack entities.
@@ -115,6 +116,10 @@ public class Attack extends SWAffordance implements SWActionInterface {
 			
 			SWEntityInterface itemCarried = a.getItemCarried();
 			if (itemCarried != null) {//if the actor is carrying an item 
+				if (itemCarried instanceof LightSaber && a.getForce() >= 75)
+				{
+					((LightSaber) itemCarried).canUseAsWeapon();
+				}
 				if (itemCarried.hasCapability(Capability.WEAPON)) {
 					target.takeDamage(itemCarried.getHitpoints() + 1); // blunt weapon won't do much, but it will still do some damage
 					itemCarried.takeDamage(1); // weapon gets blunt
