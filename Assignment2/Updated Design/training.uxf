@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>330</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Train
+package::starwars.action
+--
++canDo(SWActor a): boolean
++act(SWActor a): void
++getDuration(): int
++getDescription(): string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>330</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+can do</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>330</y>
+      <w>250</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Player
+package::starwars.entities.actors</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>330</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+is an</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>980</x>
+      <y>330</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>SWActor
+package::starwars</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>300</y>
+      <w>390</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>SWActor
+Package::starwars
+--
+-force: int
+--
++checkForce(): boolean
++checkForceMax(): boolean
++getForce(): int
++gainForce(int): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
