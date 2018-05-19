@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.2.0">
+<diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>360</x>
-      <y>370</y>
+      <y>280</y>
       <w>310</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>lightsaber
+    <panel_attributes>LightSaber
 package::starwars.entities
 --
-takeDamage(int damage): void
-getSymbol(): String
++canUseAsWeapon(): void
 
 
 </panel_attributes>
@@ -22,8 +21,8 @@ getSymbol(): String
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>560</y>
+      <x>380</x>
+      <y>450</y>
       <w>210</w>
       <h>50</h>
     </coordinates>
@@ -35,44 +34,44 @@ getSymbol(): String
     <id>Relation</id>
     <coordinates>
       <x>480</x>
-      <y>440</y>
+      <y>350</y>
       <w>30</w>
-      <h>140</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>370</y>
-      <w>210</w>
+      <y>280</y>
+      <w>230</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Entity
 --
-addAffordance(Affordance a): void
++addAffordance(Affordance a): void
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>370</y>
-      <w>180</w>
+      <x>220</x>
+      <y>280</y>
+      <w>160</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-use</panel_attributes>
-    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+is an</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>190</y>
+      <x>450</x>
+      <y>110</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -82,19 +81,19 @@ use</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>210</y>
+      <x>480</x>
+      <y>130</y>
       <w>30</w>
-      <h>180</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>810</x>
-      <y>390</y>
+      <y>280</y>
       <w>180</w>
       <h>60</h>
     </coordinates>
@@ -106,7 +105,7 @@ capabilities</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>660</x>
-      <y>400</y>
+      <y>290</y>
       <w>170</w>
       <h>30</h>
     </coordinates>

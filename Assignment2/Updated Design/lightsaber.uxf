@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>280</y>
-      <w>310</w>
-      <h>80</h>
+      <x>204</x>
+      <y>324</y>
+      <w>186</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>LightSaber
-package::starwars.entities
+::package:starwars.entities
 --
-+canUseAsWeapon(): void
-
-
-</panel_attributes>
++ifCanUseAsWeapon(SWActor a): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>450</y>
-      <w>210</w>
-      <h>50</h>
+      <x>222</x>
+      <y>210</y>
+      <w>126</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>SWEntity
 </panel_attributes>
@@ -33,46 +30,67 @@ package::starwars.entities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>350</y>
-      <w>30</w>
-      <h>120</h>
+      <x>276</x>
+      <y>234</y>
+      <w>48</w>
+      <h>102</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>280</y>
-      <w>230</w>
-      <h>70</h>
+      <y>330</y>
+      <w>60</w>
+      <h>42</h>
     </coordinates>
-    <panel_attributes>Entity
---
-+addAffordance(Affordance a): void
+    <panel_attributes>SWActor
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>280</y>
-      <w>160</w>
-      <h>40</h>
+      <x>54</x>
+      <y>336</y>
+      <w>162</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
-is an</panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>110</y>
-      <w>100</w>
+      <x>210</x>
+      <y>492</y>
+      <w>150</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>MessageRenderer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>276</x>
+      <y>366</y>
+      <w>18</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>336</y>
+      <w>84</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>Take</panel_attributes>
@@ -81,35 +99,34 @@ is an</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>130</y>
-      <w>30</w>
-      <h>170</h>
+      <x>384</x>
+      <y>342</y>
+      <w>180</w>
+      <h>18</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>280</y>
-      <w>180</w>
-      <h>60</h>
+      <x>6</x>
+      <y>492</y>
+      <w>126</w>
+      <h>18</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
-capabilities</panel_attributes>
+    <panel_attributes>Capability</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>660</x>
-      <y>290</y>
-      <w>170</w>
-      <h>30</h>
+      <x>72</x>
+      <y>366</y>
+      <w>144</w>
+      <h>138</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;210.0;220.0;10.0</additional_attributes>
   </element>
 </diagram>
