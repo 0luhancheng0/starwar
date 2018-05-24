@@ -5,9 +5,14 @@ import java.util.ArrayList;
 import edu.monash.fit2099.gridworld.GridController;
 import edu.monash.fit2099.gridworld.GridRenderer;
 import edu.monash.fit2099.simulator.matter.ActionInterface;
+import edu.monash.fit2099.simulator.matter.Affordance;
 import starwars.SWActionInterface;
 import starwars.SWActor;
+import starwars.SWEntity;
+import starwars.SWEntityInterface;
 import starwars.SWGrid;
+import starwars.SWLocation;
+import starwars.SWMobileWorld;
 import starwars.SWWorld;
 
 /**
@@ -30,6 +35,8 @@ public class SWGridController implements GridController {
 	/**SWgrid of the world*/
 	private SWGrid grid;
 	
+	private SWWorld world;
+	
 	/**
 	 * Constructor of this <code>SWGridController</code>
 	 * <p>
@@ -41,10 +48,12 @@ public class SWGridController implements GridController {
 	 * @pre 	the world should not be null
 	 */
 	public SWGridController(SWWorld world) {
+		
+		this.world = world;
 		this.grid = world.getGrid();
 		
 		//change the user interface to be used here in the constructor
-		SWGridController.ui = new SWGridTextInterface(this.grid); //use a Text Interface to interact
+		SWGridController.ui = new SWGridTextInterface(this.world); //use a Text Interface to interact
 		//this.ui = new SWGridBasicGUI(this.grid); //Use a Basic GUI to interact
 		//this.ui = new SWGridGUI(this.grid); //Use a GUI with better graphics to interact
 	}
@@ -58,7 +67,9 @@ public class SWGridController implements GridController {
 	@Override
 	public void render(String message) {
 		//call the UI to handle this too
+		((SWGridTextInterface) ui).disableBanner();
 		ui.displayMessage(message);
+		
 	}
 	
 	/**
@@ -70,13 +81,14 @@ public class SWGridController implements GridController {
 	 * @param 	a the <code>SWActor</code> for whom an Action needs to be selected
 	 * @return	the selected action for the <code>SWActor a</code>
 	 */
-	public static SWActionInterface getUserDecision(SWActor a) {
+	public SWActionInterface getUserDecision(SWActor a) {
 		
 		//this list will store all the commands that SWActor a can perform
 		ArrayList<ActionInterface> cmds = new ArrayList<ActionInterface>();
 
-		//Get all the actions the SWActor a can perform
-		for (SWActionInterface ac : SWWorld.getEntitymanager().getActionsFor(a)) {
+
+		System.out.println(this.world.getEntityManager().getActionsFor(a));
+		for (SWActionInterface ac : this.world.getEntityManager().getActionsFor(a)) {
 			if (ac.canDo(a))
 				cmds.add(ac);
 		}
@@ -89,6 +101,15 @@ public class SWGridController implements GridController {
 		
 		//cast and return selection
 		return (SWActionInterface)selectedAction;
+	}
+	
+	public static GridRenderer getUI() {
+		return ui;
+		
+	}
+	
+	public static void setUI(GridRenderer newUI) {
+		ui = newUI;
 	}
 	
 }

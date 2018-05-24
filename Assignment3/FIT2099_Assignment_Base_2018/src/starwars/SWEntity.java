@@ -85,4 +85,8 @@ public class SWEntity extends Entity implements SWEntityInterface {
 		this.hitpoints -= damage;
 	}
 	
+	public void setMessageRenderer(MessageRenderer newMessageRenderer) {
+		messageRenderer = newMessageRenderer;
+	}
+	
 }

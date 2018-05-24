@@ -1,5 +1,7 @@
 package starwars;
 
+import edu.monash.fit2099.gridworld.Grid.CompassBearing;
+
 public class Door {
 	private SWWorld outerWorld;
 	private SWMobileWorld innerWorld;
@@ -41,11 +43,18 @@ public class Door {
 
 		this.outerWorld.getEntityManager().setLocation(e, this.getOuterLoc());
 		this.innerWorld.getEntityManager().remove(e);
+		if (e instanceof SWActor) {
+			((SWActor) e).world = this.outerWorld;
+		}
 	}
 	
 	public void enter(SWEntityInterface e) {
-
+		
 		this.innerWorld.getEntityManager().setLocation(e, this.getInnerLoc());
 		this.outerWorld.getEntityManager().remove(e);
+		if (e instanceof SWActor) {
+			((SWActor) e).world = this.innerWorld;
+		}
+		
 	}
 }

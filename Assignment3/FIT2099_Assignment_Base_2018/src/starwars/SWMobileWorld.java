@@ -1,18 +1,19 @@
 package starwars;
 
-import edu.monash.fit2099.simulator.matter.EntityInterface;
+
 import edu.monash.fit2099.simulator.matter.EntityManager;
-import edu.monash.fit2099.simulator.space.Location;
+import edu.monash.fit2099.simulator.time.Scheduler;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
-import starwars.actions.Own;
 import starwars.entities.actors.Droid;
 
 public class SWMobileWorld extends SWWorld {
 	
-	private static final EntityManager<SWEntityInterface, SWLocation> entityManager = new EntityManager();
+	private static EntityManager<SWEntityInterface, SWLocation> entityManager = new EntityManager<SWEntityInterface, SWLocation>();
+
 	public SWMobileWorld(int width, int height) {
 		super();
 		super.resizeGrid(width, height);
+		
 
 		
 	}
@@ -20,7 +21,7 @@ public class SWMobileWorld extends SWWorld {
 	public void initializeWorld(MessageRenderer iface) {
 		SWLocation loc = null;
 		super.setDefaultLocString(loc);
-		
+		assert iface != null;
 		Droid droid = new Droid(100, iface, this);
 		droid.setSymbol("d");
 		loc = this.getGrid().getLocationByCoordinates(0, 0);
@@ -28,9 +29,8 @@ public class SWMobileWorld extends SWWorld {
 		
 	}
 	
-	
-	public static EntityManager<SWEntityInterface, SWLocation> getEntitymanager() {
-		return entityManager;
+	public EntityManager<SWEntityInterface, SWLocation> getEntityManager() {
+		return this.entityManager;
 	}
 
 }

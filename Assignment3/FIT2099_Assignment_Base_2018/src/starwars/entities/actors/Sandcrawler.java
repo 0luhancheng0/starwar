@@ -1,6 +1,7 @@
 package starwars.entities.actors;
 
 import edu.monash.fit2099.gridworld.GridController;
+import edu.monash.fit2099.gridworld.GridRenderer;
 import edu.monash.fit2099.simulator.space.Direction;
 import edu.monash.fit2099.simulator.time.Scheduler;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
@@ -13,9 +14,11 @@ import starwars.SWMobileWorld;
 import starwars.SWWorld;
 import starwars.Team;
 import starwars.actions.Enter;
+import starwars.actions.Exit;
 import starwars.actions.Move;
 import starwars.entities.actors.behaviors.Patrol;
 import starwars.swinterfaces.SWGridController;
+import starwars.swinterfaces.SWGridTextInterface;
 
 public class Sandcrawler extends SWActor {
 	private Patrol path;
@@ -23,8 +26,11 @@ public class Sandcrawler extends SWActor {
 	private boolean moved = false;
 	private static final int WIDTH = 2;
 	private static final int HEIGHT = 2;
-	private GridController innerUIController;
-	private Scheduler theScheduler;
+	private GridRenderer innerUI;
+	private GridRenderer outerUI;
+	private Scheduler innerScheduler;
+	private Scheduler outerScheduler;
+	private boolean playInside;
 	
 	public Sandcrawler(MessageRenderer m, SWWorld world, Direction [] moves) {
 		super(Team.NEUTRAL, 100, m, world);
@@ -34,6 +40,7 @@ public class Sandcrawler extends SWActor {
 		this.addAffordance(new Enter(this, m));
 		
 		SWMobileWorld worldCarried = new SWMobileWorld(WIDTH, HEIGHT);
+		innerScheduler = new Scheduler(1, worldCarried);
 		
 
 		
@@ -54,7 +61,7 @@ public class Sandcrawler extends SWActor {
 		this.doorCarried.setOuterLoc(loc);
 		for (SWEntityInterface e : this.world.getEntityManager().contents(loc)) {
 			if (e != this && e.hasCapability(Capability.COLLECTABLE)) {
-				e.takeDamage(e.getHitpoints());
+
 				this.enterInnerWorld(e);
 
 				
@@ -77,22 +84,71 @@ public class Sandcrawler extends SWActor {
 
 	}
 	
+	private void setInnerUI(GridRenderer innerUI) {
+		((SWGridTextInterface) innerUI).disableBanner();
+		this.innerUI = innerUI;
+	}
+	private void setOuterUI(GridRenderer outerUI) {
+		((SWGridTextInterface) outerUI).disableBanner();
+		this.outerUI = outerUI;
+	}
 	public void enterInnerWorld(SWEntityInterface e) {
 		this.doorCarried.enter(e);
-
-		if (e instanceof Player) {
-			SWMobileWorld worldCarried = this.doorCarried.getInnerWorld();
-			theScheduler = new Scheduler(1, worldCarried);
-			SWActor.setScheduler(theScheduler);
-			innerUIController = new SWGridController(worldCarried);
-			worldCarried.initializeWorld(innerUIController);
-			
-			
-
-
-			return;
-		}
+		SWMobileWorld worldCarried = this.doorCarried.getInnerWorld();
 		
+		GridRenderer outerUI = SWGridController.getUI();
+		this.setOuterUI(outerUI);
+		
+		GridController innerUIController = new SWGridController(worldCarried);
+		
+		GridRenderer innerUI = SWGridController.getUI();
+		this.setInnerUI(innerUI);
+		SWGridController.setUI(outerUI);
+
+		if (e instanceof SWActor) {
+
+			if (((SWActor) e).checkForce()) {
+				((SWActor) e).addAction(new Exit(innerUIController));
+			}
+			((SWActor) e).setWhichSandcIn(this);
+			((SWActor) e).setMessageRenderer(innerUIController);
+			((SWActor) e).resetMoveCommands(worldCarried.getEntityManager().whereIs(e));
+
+			if (e instanceof Player) {
+				this.playInside = true;
+				SWGridController.setUI(innerUI);
+				
+				outerScheduler = SWActor.getScheduler();
+				
+				SWActor.setScheduler(innerScheduler);
+				
+				worldCarried.initializeWorld(innerUIController);
+
+				
+				while (this.playInside) {
+					innerUIController.render();
+					innerScheduler.tick();
+				}	
+			}	
+		}
+	}
+	
+	public void exitInnerWorld(SWActor e) {
+		this.doorCarried.leave(e);
+		e.setWhichSandcIn(null);
+		SWGridController outerUIController = new SWGridController(this.world);
+		SWGridController.setUI(innerUI);
+		e.setMessageRenderer(outerUIController);
+		e.resetMoveCommands(this.world.getEntityManager().whereIs(e));
+		if (e instanceof Player) {
+			this.playInside = false;
+			SWGridController.setUI(outerUI);
+
+			SWActor.setScheduler(outerScheduler);
+			
+			
+		}
+			
 		
 	}
 	

@@ -12,7 +12,7 @@ import starwars.SWWorld;
 public class Detonate extends SWAffordance {
 
 	private static final int[] DAMAGE_LIST = {20, 10, 5};
-	
+
 	
 	
 

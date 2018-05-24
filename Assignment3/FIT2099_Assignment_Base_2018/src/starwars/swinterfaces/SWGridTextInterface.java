@@ -29,13 +29,14 @@ import starwars.SWWorld;
 public class SWGridTextInterface implements GridRenderer {
 	
 	/**The grid of the world*/
-	private static SWGrid grid;
+	private SWGrid grid;
 	
 	/**If or not to show the banner*/
 	private static boolean showBanner;
 	
-	private static Scanner instream;
+	private Scanner instream;
 	
+	private SWWorld world;
 	/**
 	 * Constructor for the <code>SWGridTextInterface</code>. Will set showBanner flag to true to
 	 * show the text banner with the first map render.
@@ -43,9 +44,11 @@ public class SWGridTextInterface implements GridRenderer {
 	 * @param 	grid the grid of the world
 	 * @pre 	grid should not be null 
 	 */
-	public SWGridTextInterface(SWGrid grid) {
-		SWGridTextInterface.grid = grid;
+	public SWGridTextInterface(SWWorld world) {
+
+		this.grid = world.getGrid();
 		instream = new Scanner(System.in);
+		this.world = world;
 		//set the show banner to true so that the banner would be displayed on the first map render
 		showBanner = true;
 	}
@@ -65,7 +68,7 @@ public class SWGridTextInterface implements GridRenderer {
 	 */
 	private String getLocationString(SWLocation loc) {
 		
-		final EntityManager<SWEntityInterface, SWLocation> em = SWWorld.getEntitymanager();
+		final EntityManager<SWEntityInterface, SWLocation> em = this.world.getEntityManager();
 		
 		//all string would be of locationWidth length
 		final int locationWidth = 8;
@@ -197,6 +200,10 @@ public class SWGridTextInterface implements GridRenderer {
 		}
 	
 		return cmds.get(selection-1);//return the action selected		
+	}
+	
+	public void disableBanner() {
+		showBanner = false;
 	}
  	
 

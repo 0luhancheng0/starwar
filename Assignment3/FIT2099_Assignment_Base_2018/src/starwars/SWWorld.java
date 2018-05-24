@@ -145,6 +145,14 @@ public class SWWorld extends World {
 		luke.addAction(new Train(iface));
 
 		
+		//sandcrawler
+		
+		Sandcrawler sandcrawler = new Sandcrawler(iface, this, patrolmoves);
+		sandcrawler.setSymbol("S");
+		loc = myGrid.getLocationByCoordinates(5, 8);
+		entityManager.setLocation(sandcrawler, loc);
+		
+		
 		// Beggar's Canyon 
 		for (int col = 3; col < 8; col++) {
 			loc = myGrid.getLocationByCoordinates(col, 8);
@@ -227,12 +235,7 @@ public class SWWorld extends World {
 			entityManager.setLocation(grenade, loc);
 		}
 		
-		//sandcrawler
 		
-		Sandcrawler sandcrawler = new Sandcrawler(iface, this, patrolmoves);
-		sandcrawler.setSymbol("S");
-		loc = myGrid.getLocationByCoordinates(5, 8);
-		entityManager.setLocation(sandcrawler, loc);
 		
 		
 	}
@@ -251,7 +254,8 @@ public class SWWorld extends World {
 	 * @return 	true if the actor can see an exit in <code>whichDirection</code>, false otherwise.
 	 */
 	public boolean canMove(SWActor a, Direction whichDirection) {
-		SWLocation where = (SWLocation)entityManager.whereIs(a); // requires a cast for no reason I can discern
+		SWLocation where = a.world.getEntityManager().whereIs(a);
+		
 		return where.hasExit(whichDirection);
 	}
 	
@@ -275,12 +279,12 @@ public class SWWorld extends World {
 	public void moveEntity(SWActor a, Direction whichDirection) {
 		
 		//get the neighboring location in whichDirection
-		Location loc = entityManager.whereIs(a).getNeighbour(whichDirection);
+		Location loc = a.world.getEntityManager().whereIs(a).getNeighbour(whichDirection);
 		
 		// Base class unavoidably stores superclass references, so do a checked downcast here
 		if (loc instanceof SWLocation)
 			//perform the move action by setting the new location to the the neighboring location
-			entityManager.setLocation(a, (SWLocation) entityManager.whereIs(a).getNeighbour(whichDirection));
+			a.world.getEntityManager().setLocation(a, (SWLocation) a.world.getEntityManager().whereIs(a).getNeighbour(whichDirection));
 	}
 
 	/**

@@ -32,6 +32,7 @@ public class Move extends SWAction {
 	 * @param world the world in which the <code>Move</code> action needs to happen
 	 */
 	public Move(Direction d, MessageRenderer m, SWWorld world) {
+		
 		super(m);
 		this.whichDirection = d;
 		this.world = world;
@@ -53,7 +54,7 @@ public class Move extends SWAction {
 		
 		if (world.canMove(a, whichDirection)) {
 			world.moveEntity(a, whichDirection);
-			a.resetMoveCommands(world.find(a));//reset the new possible set of moves based on the new location of the entity
+			a.resetMoveCommands(world.getEntityManager().whereIs(a));//reset the new possible set of moves based on the new location of the entity
 			messageRenderer.render(a.getShortDescription() + " is moving " + whichDirection);
 		}
 				

@@ -82,7 +82,8 @@ public class Droid extends SWActor {
 		}
 		
 		// if the Droid is owned by a SWActor
-		Location droidLocation = this.world.find(this);
+
+		Location droidLocation = this.world.getEntityManager().whereIs(this);
 		if (this.isOwned()) {
 			Move myMove = null; 
 			ArrayList<Direction> possibleDirections = new ArrayList<Direction>();
@@ -92,15 +93,17 @@ public class Droid extends SWActor {
 				
 				// build a list of available directions
 				for (CompassBearing d : CompassBearing.values()) {
-					if (world.getEntitymanager().seesExit(this, d)) {
+			
+					if (this.world.getEntityManager().seesExit(this, d)) {
 						possibleDirections.add(d);
 						
 					}
 					
 					// move to owner's direction if its owner is in the neighbour locations of the Droid
+					
 					if (droidLocation.getNeighbour(d) == ownerLocation) {
 		
-						myMove = new Move(d, messageRenderer, world);
+						myMove = new Move(d, messageRenderer, this.world);
 						
 					}
 				}
@@ -111,8 +114,7 @@ public class Droid extends SWActor {
 					{
 						heading = possibleDirections.get((int) (Math.floor(Math.random() * possibleDirections.size())));
 					}
-					
-					myMove = new Move(heading, messageRenderer, world);
+					myMove = new Move(heading, messageRenderer, this.world);
 					
 					
 					}

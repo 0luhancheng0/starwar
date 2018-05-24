@@ -7,7 +7,10 @@ import starwars.actions.Detonate;
 import starwars.actions.Take;
 
 public class Grenade extends SWEntity {
-
+	/**
+	 * this constructor will initialize the grenade
+	 * @param m
+	 */
 	public Grenade(MessageRenderer m) {
 		super(m);
 		// TODO Auto-generated constructor stub
@@ -20,11 +23,17 @@ public class Grenade extends SWEntity {
 
 	}
 	
-	
+	/**
+	 * 
+	 * return the short description of this grenade
+	 */
 	public String getShortDescription() {
 		return this.shortDescription;
 	}
 	
+	/**
+	 * return the long description of this grenade
+	 */
 	public String getLongDescription() {
 		return this.longDescription;
 	}

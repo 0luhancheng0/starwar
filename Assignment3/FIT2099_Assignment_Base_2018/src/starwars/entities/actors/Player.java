@@ -23,6 +23,8 @@ import starwars.swinterfaces.SWGridController;
  * 				A controller used to get user input rather than the UI directly (Asel)
  */
 public class Player extends SWActor {
+	
+
 
 	/**
 	 * Constructor for the <code>Player</code> class. This constructor will,
@@ -44,6 +46,7 @@ public class Player extends SWActor {
 		super(team, hitpoints, m, world);
 		humanControlled = true; // this feels like a hack. Surely this should be dynamic
 		this.force = 25; // set the initial force of Luke
+		
 	}
 	
 	/**
@@ -58,7 +61,7 @@ public class Player extends SWActor {
 	@Override
 	public void act() {	
 		describeScene();
-		scheduler.schedule(SWGridController.getUserDecision(this), this, 1);
+		scheduler.schedule(((SWGridController) messageRenderer).getUserDecision(this), this, 1);
 		
 	}
 	/**
@@ -99,6 +102,8 @@ public class Player extends SWActor {
 			}
 		}
 	}
+	
+	
 	
 
 }

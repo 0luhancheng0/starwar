@@ -26,6 +26,7 @@ import edu.monash.fit2099.simulator.time.Scheduler;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.actions.Attack;
 import starwars.actions.Move;
+import starwars.entities.actors.Sandcrawler;
 
 public abstract class SWActor extends Actor<SWActionInterface> implements SWEntityInterface {
 	
@@ -61,6 +62,7 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 */
 	public static final int MAX_FORCE = 100;
 	
+	private Sandcrawler whichSandcIn;
 
 	
 	/**
@@ -107,6 +109,10 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 */
 	public static void setScheduler(Scheduler s) {
 		scheduler = s;
+	}
+	
+	public static Scheduler getScheduler() {
+		return scheduler;
 	}
 	
 	/**
@@ -272,9 +278,13 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		}
 		
 		// add new movement possibilities
-		for (CompassBearing d: CompassBearing.values()) { 														  
-			if (loc.getNeighbour(d) != null) //if there is an exit from the current location in direction d, add that as a Move command
-				newActions.add(new Move(d,messageRenderer, world)); 
+		for (CompassBearing d: CompassBearing.values()) { 	
+			if (loc == null) {
+				return;
+			}
+			if (loc.getNeighbour(d) != null) { //if there is an exit from the current location in direction d, add that as a Move command
+				newActions.add(new Move(d,messageRenderer, this.world)); 
+			}
 		}
 		
 		// replace command list of this SWActor
@@ -318,6 +328,28 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		assert (this.getForce()+increment <= MAX_FORCE) : "The force of a person can never exceed 100";
 		this.force += increment;
 	}
+	
+	public void setMessageRenderer(MessageRenderer newMessageRenderer) {
+		messageRenderer = newMessageRenderer;
+	}
+	
+	public boolean insideMobileWorld() {
+		if (this.world instanceof SWMobileWorld) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void setWhichSandcIn(Sandcrawler newSandcrawler) {
+		this.whichSandcIn = newSandcrawler;
+	}
+	
+	public void exitMobileWorld() {
+		assert this.insideMobileWorld();
+		this.whichSandcIn.exitInnerWorld(this);
+	}
+
+	
 	
 
 }
