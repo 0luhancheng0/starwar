@@ -7,7 +7,7 @@ import starwars.SWActor;
 public class Exit extends SWAction {
 	/**
 	 * Constructor for the <code>Exit</code> Class. Will initialize the message renderer
-	 * set the priority of this <code>Affordance</code> to 1 (lowest priority is 0).
+	 * set the priority of this <code>SWAction</code> to 1 (lowest priority is 0).
 	 * 
 	 * @param m the message renderer to display messages
 	 */

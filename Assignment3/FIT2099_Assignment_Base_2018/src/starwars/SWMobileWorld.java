@@ -2,7 +2,6 @@ package starwars;
 
 
 import edu.monash.fit2099.simulator.matter.EntityManager;
-import edu.monash.fit2099.simulator.time.Scheduler;
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.entities.actors.Droid;
 
@@ -51,7 +50,7 @@ public class SWMobileWorld extends SWWorld {
 	 * return the static entity manager of the instance world
 	 */
 	public EntityManager<SWEntityInterface, SWLocation> getEntityManager() {
-		return this.entityManager;
+		return SWMobileWorld.entityManager;
 	}
 
 }

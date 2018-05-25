@@ -4,7 +4,6 @@ import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
 import starwars.Capability;
 import starwars.SWActor;
 import starwars.SWEntity;
-import starwars.actions.Leave;
 import starwars.actions.Take;
 
 /**
@@ -23,7 +22,7 @@ import starwars.actions.Take;
 public class LightSaber extends SWEntity {
 	
 	/**
-	 * the force limit that can make actor wield lightsaber
+	 * The force limit that permits a <code>SWActor</code> to wield a <code>LightSaber</code> as a weapon.
 	 */
 	
 	public static final int FORCE_LIMIT = 75;
@@ -34,7 +33,7 @@ public class LightSaber extends SWEntity {
 	 * 	<li>Initialize the message renderer for the <code>LightSaber</code></li>
 	 * 	<li>Set the short description of this <code>LightSaber</code>>
 	 * 	<li>Set the long description of this <code>LightSaber</code> 
-	 * 	<li>Add a <code>Take</code> affordance to this <code>LightSaber</code> so it can be taken</li> 
+	 * 	<li>Add a <code>Take</code> Affordance to this <code>LightSaber</code> so it can be taken</li> 
 	 * </ul>
 	 * 
 	 * @param m <code>MessageRenderer</code> to display messages.

@@ -36,7 +36,7 @@ public class Enter extends SWAffordance {
 	@Override
 	public void act(SWActor a) {
 		target = this.getTarget();
-		assert (target instanceof Sandcrawler) : "the target must be sandscrwler";
+		assert (target instanceof Sandcrawler) : "The target must be a Sandcrawler";
 		((Sandcrawler) target).enterInnerWorld(a);
 		
 		// TODO Auto-generated method stub
@@ -46,7 +46,7 @@ public class Enter extends SWAffordance {
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return "Enter " + this.getTarget().getShortDescription();
+		return "enter " + this.getTarget().getShortDescription();
 	}
 
 }

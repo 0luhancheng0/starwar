@@ -1,7 +1,6 @@
 package starwars.actions;
 
 import edu.monash.fit2099.simulator.userInterface.MessageRenderer;
-import starwars.SWActionInterface;
 import starwars.SWActor;
 import starwars.SWAffordance;
 import starwars.SWEntityInterface;
@@ -12,7 +11,7 @@ public class Own extends SWAffordance{
 	 * Constructor for the <code>Own</code> Class. Will initialize the message renderer, the target and 
 	 * set the priority of this <code>Action</code> to 1 (lowest priority is 0).
 	 * 
-	 * @param theTarget a <code>SWEntity</code> that is being Owned
+	 * @param theTarget a <code>SWEntity</code> that will be owned
 	 * @param m the message renderer to display messages
 	 */
 	public Own(SWEntityInterface theTarget, MessageRenderer m) {
@@ -38,10 +37,10 @@ public class Own extends SWAffordance{
 	 * Perform the <code>Own</code> action by setting the <code>owner</code> as <code>SWActor</code> a for <code>target</code>
 	 * 
 	 * <p>
-	 * This method should only be called if the <code>SWActor a</code> is alive.
+	 * This method should only be called if the <code>SWActor</code> is alive.
 	 * 
 	 * @author 	Luhan Cheng
-	 * @param 	a the <code>SWActor</code> that is owning the target
+	 * @param 	a the <code>SWActor</code> that is will <code>Own</code> the target
 	 */
 	@Override
 	public void act(SWActor a) {
@@ -54,12 +53,12 @@ public class Own extends SWAffordance{
 	 * A String describing what this action will do, suitable for display in a user interface
 	 * 
 	 * @author Luhan Cheng
-	 * @return String comprising "own " and the short description of the target of this <code>Own</code>
+	 * @return String comprising "take ownership of this " and the short description of the target of <code>Own</code>
 	 */
 	@Override
 	public String getDescription() {
 		// TODO Auto-generated method stub
-		return "Own " + this.target.getShortDescription();
+		return "take ownership of this " + this.target.getShortDescription();
 	}
 
 }

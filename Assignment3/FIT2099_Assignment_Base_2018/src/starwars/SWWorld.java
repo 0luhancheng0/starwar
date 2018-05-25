@@ -1,7 +1,6 @@
 package starwars;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import edu.monash.fit2099.gridworld.Grid.CompassBearing;

@@ -49,13 +49,20 @@ public class Reservoir extends SWEntity {
 		return longDescription;
 	}
 	
+	/**
+	 * Method for <code>Reservoir</code> to take damage. Calls a method to check and update the description and 
+	 * symbol of the <code>Reservoir</code>, if necessary.
+	 */
 	public void takeDamage(int damage) {
 		this.hitpoints -= damage;
 		this.updateStatus();
 	}
 	
 	/**
-	 * update the status of the reservoir according to its current hitpoint
+	 * Update the short and long descriptions, and symbol of the <code>Reservoir</code>, 
+	 * according to its current hitpoints.
+	 * 
+	 * @author Marcus Ooi
 	 */
 	private void updateStatus() {
 		if (this.hitpoints < 20 && this.hitpoints > 0) {

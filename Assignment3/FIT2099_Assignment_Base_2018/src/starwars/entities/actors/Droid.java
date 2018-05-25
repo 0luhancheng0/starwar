@@ -110,7 +110,7 @@ public class Droid extends SWActor {
 				// if Droid cannot find its owner
 				if (myMove == null) {
 					// randomly get a direction and move towards it
-					if (heading == null || !(world.getEntitymanager().seesExit(this, heading)))
+					if (heading == null || !(SWWorld.getEntitymanager().seesExit(this, heading)))
 					{
 						heading = possibleDirections.get((int) (Math.floor(Math.random() * possibleDirections.size())));
 					}
@@ -142,7 +142,7 @@ public class Droid extends SWActor {
 			// decrease the hitpoint of the Droid if it is in BadLands
 			if (inBadLand) {
 				this.takeDamage(5);
-				say("the droid lost 5 health in badland, current hitpoint: " + this.getHitpoints());
+				say("the Droid lost 5 health in the BadLands, its current hitpoints is: " + this.getHitpoints());
 			}
 		}
 		

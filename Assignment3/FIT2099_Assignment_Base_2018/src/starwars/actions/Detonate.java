@@ -62,20 +62,16 @@ public class Detonate extends SWAffordance {
 					if (e != a) {
 						int damage = DAMAGE_LIST[i];
 						e.takeDamage(damage);
-						e.say(e.getShortDescription() + " lost " + damage + " hitpoints in explosion");
+						e.say(e.getShortDescription() + " lost " + damage + " hitpoints in the explosion");
 					}
 				}
 				
 			}
 		}
 		
-		//the exploder should be cleared after the detonation
+		//the exploding item should be cleared after the detonation
 		a.setItemCarried(null);
 		
-		
-		
-		
-
 	}
 
 	@Override

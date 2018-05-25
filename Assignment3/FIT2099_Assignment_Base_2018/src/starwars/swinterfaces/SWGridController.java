@@ -5,14 +5,9 @@ import java.util.ArrayList;
 import edu.monash.fit2099.gridworld.GridController;
 import edu.monash.fit2099.gridworld.GridRenderer;
 import edu.monash.fit2099.simulator.matter.ActionInterface;
-import edu.monash.fit2099.simulator.matter.Affordance;
 import starwars.SWActionInterface;
 import starwars.SWActor;
-import starwars.SWEntity;
-import starwars.SWEntityInterface;
 import starwars.SWGrid;
-import starwars.SWLocation;
-import starwars.SWMobileWorld;
 import starwars.SWWorld;
 
 /**
@@ -33,6 +28,7 @@ public class SWGridController implements GridController {
 	private static GridRenderer ui; 
 	
 	/**SWgrid of the world*/
+	@SuppressWarnings("unused")
 	private SWGrid grid;
 	/**the world of controller that is in control of*/
 	private SWWorld world;
@@ -73,7 +69,7 @@ public class SWGridController implements GridController {
 	}
 	
 	/**
-	 * Will return a Action selected by the user.
+	 * Will return an <code>Action</code> selected by the user.
 	 * <p>
 	 * This method will provide the user interface with a list of commands from which the user 
 	 * needs to select one from and will return this selection.	
@@ -94,7 +90,7 @@ public class SWGridController implements GridController {
 		
 		//Get the UI to display the commands to the user and get a selection
 		//TO DO: Ensure the cmd list is not empty to avoid an infinite wait
-		assert (cmds.size()>0): "No commands for Star Wars Actor";
+		assert (cmds.size()>0): "No commands for the Star Wars Actor";
 		
 		ActionInterface selectedAction = ui.getSelection(cmds);
 		
@@ -103,7 +99,7 @@ public class SWGridController implements GridController {
 	}
 	
 	/**
-	 * get user interface for the controller
+	 * Get user interface for the <code>SWGridController</code>
 	 * @return the user interface
 	 */
 	public static GridRenderer getUI() {
@@ -112,7 +108,7 @@ public class SWGridController implements GridController {
 	}
 	
 	/**
-	 * set the user interface
+	 * Sets the user interface for the <code>SWGridController</code>
 	 * @param newUI the new user interface
 	 */
 	public static void setUI(GridRenderer newUI) {

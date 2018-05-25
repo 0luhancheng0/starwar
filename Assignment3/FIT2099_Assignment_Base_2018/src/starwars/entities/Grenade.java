@@ -8,14 +8,14 @@ import starwars.actions.Take;
 
 public class Grenade extends SWEntity {
 	/**
-	 * this constructor will initialize the grenade
-	 * @param m
+	 * Constructor will initialize the <code>Grenade</code>
+	 * @param m the MessageRenderer to display messages
 	 */
 	public Grenade(MessageRenderer m) {
 		super(m);
 		// TODO Auto-generated constructor stub
 		this.shortDescription = "a grenade";
-		this.longDescription = "a explodable nice grenade";
+		this.longDescription = "an explodable, nice grenade";
 		this.capabilities.add(Capability.EXPLODABLE);
 		this.hitpoints = 40;
 		this.addAffordance(new Take(this, m));
@@ -25,30 +25,27 @@ public class Grenade extends SWEntity {
 	
 	/**
 	 * 
-	 * return the short description of this grenade
+	 * Returns the short description of this <code>Grenade</code>
 	 */
 	public String getShortDescription() {
 		return this.shortDescription;
 	}
 	
 	/**
-	 * return the long description of this grenade
+	 * Returns the long description of this <code>Grenade</code>
 	 */
 	public String getLongDescription() {
 		return this.longDescription;
 	}
 	
 	/**
-	 * Method that remove the exploded grenade from the game
-	 * 
+	 * Method that removes the exploded <code>Grenade</code> from the game
 	 * 
 	 * @author 	Luhan Cheng
-
 	 */
 	@Override
 	public void takeDamage(int damage) {
 		this.hitpoints -= damage;
-		
 	}
 	
 

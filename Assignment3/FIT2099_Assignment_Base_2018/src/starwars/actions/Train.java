@@ -71,10 +71,11 @@ public class Train extends SWAction implements SWActionInterface {
 			// check if the actor a can wield the lightsaber
 			if (a.getForce() >= LightSaber.FORCE_LIMIT)
 			{
-				a.say("Congratulations! you are able to wield lightsaber now");
+				a.say("Congratulations! You are able to wield a LightSaber now.");
 			}
 			else {
-				a.say("you still need to gain " + (LightSaber.FORCE_LIMIT-a.getForce()) + " to use lightsaber as weapon");
+				a.say("You still need to gain " + (LightSaber.FORCE_LIMIT - a.getForce()) + 
+						" to use a LightSaber as weapon");
 			}
 			
 		}

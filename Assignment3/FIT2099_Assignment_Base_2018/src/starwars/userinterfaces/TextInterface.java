@@ -192,6 +192,7 @@ public class TextInterface implements MessageRenderer, MapRenderer, SimulationCo
 	 * @return the SWActionInterface that the player has chosen to perform.
 	 */
 	public static SWActionInterface getUserDecision(SWActor a) {
+		@SuppressWarnings("resource")
 		Scanner instream = new Scanner(System.in);
 		ArrayList<SWActionInterface> cmds = new ArrayList<SWActionInterface>();
 
