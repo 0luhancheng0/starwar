@@ -30,7 +30,8 @@ public class Sandcrawler extends SWActor {
 	private GridRenderer outerUI;
 	private Scheduler innerScheduler;
 	private Scheduler outerScheduler;
-	private boolean playInside;
+	private boolean playInside = false;
+	private boolean innerWorldInitialized = false;
 	
 	public Sandcrawler(MessageRenderer m, SWWorld world, Direction [] moves) {
 		super(Team.NEUTRAL, 100, m, world);
@@ -122,7 +123,12 @@ public class Sandcrawler extends SWActor {
 				
 				SWActor.setScheduler(innerScheduler);
 				
-				worldCarried.initializeWorld(innerUIController);
+				if (!this.innerWorldInitialized) {
+					worldCarried.initializeWorld(innerUIController);
+				}
+				else {
+					this.innerWorldInitialized = true;
+				}
 
 				
 				while (this.playInside) {

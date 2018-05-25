@@ -34,7 +34,7 @@ public class Reservoir extends SWEntity {
 		super(m);
 		SWAffordance dip = new Dip(this, m);
 		this.addAffordance(dip);	
-		
+		this.hitpoints = 40;
 		this.setLongDescription("a water reservoir.");
 		this.setShortDescription("a water reservoir, full of cool, clear, refreshing water");
 		this.setSymbol("W");
@@ -47,5 +47,23 @@ public class Reservoir extends SWEntity {
 	
 	public String getLongDescription() {
 		return longDescription;
+	}
+	
+	public void takeDamage(int damage) {
+		this.hitpoints -= damage;
+		this.updateStatus();
+	}
+	
+	private void updateStatus() {
+		if (this.hitpoints < 20 && this.hitpoints > 0) {
+			this.setShortDescription("a damaged water reservoir");
+			this.setLongDescription("a damaged water reservoir, leaking slowly");
+			this.setSymbol("V");
+		}
+		if (this.hitpoints <= 0) {
+			this.setShortDescription("the wreckage of a water reservoir");
+			this.setLongDescription("the wreckage of a water reservoir, surrounded by slightly damp soil");
+			this.setSymbol("X");
+		}
 	}
 }

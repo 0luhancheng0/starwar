@@ -19,6 +19,13 @@ public class SWMobileWorld extends SWWorld {
 	}
 	
 	public void initializeWorld(MessageRenderer iface) {
+		for (int col=0; col<this.getGrid().getWidth(); col++) {
+			for (int row=0; row<this.getGrid().getHeight(); row++) {
+				SWLocation loc = this.getGrid().getLocationByCoordinates(col, row);
+				loc.setShortDescription("inner world of sandcrawler");
+				loc.setLongDescription("inner world of sandcrawler at (" + col + ", " + row + ")");
+			}
+		}
 		SWLocation loc = null;
 		super.setDefaultLocString(loc);
 		assert iface != null;
