@@ -15,7 +15,13 @@ public class Detonate extends SWAffordance {
 
 	
 	
-
+	/**
+	 * Constructor for the <code>Detonate</code> Class. Will initialize the message renderer, the target and 
+	 * set the priority of this <code>Detonate</code> to 1 (lowest priority is 0).
+	 * 
+	 * @param theTarget a <code>SWEntity</code> that is going to be detonated
+	 * @param m the message renderer to display messages
+	 */
 	public Detonate(SWEntityInterface theTarget, MessageRenderer m) {
 		super(theTarget, m);
 		priority = 1;

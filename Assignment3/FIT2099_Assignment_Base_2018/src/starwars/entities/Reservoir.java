@@ -54,6 +54,9 @@ public class Reservoir extends SWEntity {
 		this.updateStatus();
 	}
 	
+	/**
+	 * update the status of the reservoir according to its current hitpoint
+	 */
 	private void updateStatus() {
 		if (this.hitpoints < 20 && this.hitpoints > 0) {
 			this.setShortDescription("a damaged water reservoir");

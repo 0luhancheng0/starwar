@@ -34,7 +34,7 @@ public class SWGridController implements GridController {
 	
 	/**SWgrid of the world*/
 	private SWGrid grid;
-	
+	/**the world of controller that is in control of*/
 	private SWWorld world;
 	
 	/**
@@ -102,11 +102,19 @@ public class SWGridController implements GridController {
 		return (SWActionInterface)selectedAction;
 	}
 	
+	/**
+	 * get user interface for the controller
+	 * @return the user interface
+	 */
 	public static GridRenderer getUI() {
 		return ui;
 		
 	}
 	
+	/**
+	 * set the user interface
+	 * @param newUI the new user interface
+	 */
 	public static void setUI(GridRenderer newUI) {
 		ui = newUI;
 	}

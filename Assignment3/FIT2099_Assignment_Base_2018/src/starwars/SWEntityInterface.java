@@ -66,6 +66,10 @@ public interface SWEntityInterface extends EntityInterface {
 	 */
 	public void takeDamage(int damage);
 	
+	/**
+	 * set a new message renderer to the entity
+	 * @param newMessageRenderer the new message renderer that is going to be used to display the message for the entity
+	 */
 	public void setMessageRenderer(MessageRenderer newMessageRenderer);
 
 }

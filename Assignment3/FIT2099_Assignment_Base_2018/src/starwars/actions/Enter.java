@@ -7,9 +7,16 @@ import starwars.SWEntityInterface;
 import starwars.entities.actors.Sandcrawler;
 
 public class Enter extends SWAffordance {
-
+	/**
+	 * Constructor for the <code>Enter</code> Class. Will initialize the message renderer, the target and 
+	 * set the priority of this <code>Affordance</code> to 1 (lowest priority is 0).
+	 * 
+	 * @param theTarget a <code>SWEntity</code> that is going to be enter
+	 * @param m the message renderer to display messages
+	 */
 	public Enter(SWEntityInterface theTarget, MessageRenderer m) {
 		super(theTarget, m);
+		this.priority = 1;
 		// TODO Auto-generated constructor stub
 	}
 

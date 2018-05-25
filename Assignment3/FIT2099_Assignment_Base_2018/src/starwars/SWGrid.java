@@ -27,6 +27,12 @@ public class SWGrid extends Grid<SWLocation> {
 		super(10,10,factory);
 	}
 	
+	/**
+	 * provide another constructor to produce the grid with customized size
+	 * @param factory
+	 * @param width
+	 * @param height
+	 */
 	public SWGrid(LocationMaker<SWLocation> factory, int width, int height) {
 		super(width, height, factory);
 	}

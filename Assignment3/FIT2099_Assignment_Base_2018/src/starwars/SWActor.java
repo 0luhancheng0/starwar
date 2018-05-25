@@ -368,7 +368,10 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		this.whichSandcIn.exitInnerWorld(this);
 	}
 	
-
+	/**
+	 * set the world to another world, it may be used when transfering to another world
+	 * @param world the new world
+	 */
 	protected void setWorld(SWWorld world) {
 		this.world = world;
 	}

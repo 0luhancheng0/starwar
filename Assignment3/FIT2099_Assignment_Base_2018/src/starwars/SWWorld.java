@@ -52,7 +52,11 @@ public class SWWorld extends World {
 	}
 	
 	
-	
+	/**
+	 * this method will overwrite <code>myGrid</code> to another size
+	 * @param width the width of the new grid
+	 * @param height the height of the new grid
+	 */
 	void resizeGrid(int width, int height) {
 		myGrid = new SWGrid(factory, width, height);
 		space = myGrid;
