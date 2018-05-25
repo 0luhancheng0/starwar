@@ -93,42 +93,68 @@ public class Sandcrawler extends SWActor {
 		((SWGridTextInterface) outerUI).disableBanner();
 		this.outerUI = outerUI;
 	}
+	
+	private void resetMovaCommandToWorld(SWActor a, SWWorld destinationWorld) {
+		// reset the move command in the destination world
+		a.resetMoveCommands(destinationWorld.getEntityManager().whereIs(a));
+	}
+	
 	public void enterInnerWorld(SWEntityInterface e) {
+		
+		// enter the door
 		this.doorCarried.enter(e);
 		SWMobileWorld worldCarried = this.doorCarried.getInnerWorld();
 		
+		// record the outside world user interface
 		GridRenderer outerUI = SWGridController.getUI();
 		this.setOuterUI(outerUI);
 		
 		GridController innerUIController = new SWGridController(worldCarried);
 		
+		// record the inner world user interface
 		GridRenderer innerUI = SWGridController.getUI();
 		this.setInnerUI(innerUI);
+		
+		// the outside world user interface should be set back since the ui should 
+		// not change if the entity other than player entered the inner world
 		SWGridController.setUI(outerUI);
 
 		if (e instanceof SWActor) {
-
+			this.resetMovaCommandToWorld(((SWActor) e), worldCarried);
+			// only the SWActor have force will have ability to leave the sandcrawler
+			// since the the SWActor (like droid)  may be collected by sandcrawler, this checking is necessary 
+			// to make sure they won't be able to exit by themselves
 			if (((SWActor) e).checkForce()) {
 				((SWActor) e).addAction(new Exit(innerUIController));
 			}
+			
+			// keep a reference to the outside sandcrawler, so it know where to exit from 
 			((SWActor) e).setWhichSandcIn(this);
+			
+			// pass the inner world message renderer to the actor
 			((SWActor) e).setMessageRenderer(innerUIController);
-			((SWActor) e).resetMoveCommands(worldCarried.getEntityManager().whereIs(e));
+			
+			
 
+			
+			
 			if (e instanceof Player) {
 				this.playInside = true;
+				
+				// switch the user interface to the inner world
 				SWGridController.setUI(innerUI);
 				
+				// keep a reference to the outside world scheduler
 				outerScheduler = SWActor.getScheduler();
 				
 				SWActor.setScheduler(innerScheduler);
 				
+				// only need to initialize the world once
 				if (!this.innerWorldInitialized) {
 					worldCarried.initializeWorld(innerUIController);
-				}
-				else {
 					this.innerWorldInitialized = true;
 				}
+				
 
 				
 				while (this.playInside) {
@@ -139,15 +165,16 @@ public class Sandcrawler extends SWActor {
 		}
 	}
 	
-	public void exitInnerWorld(SWActor e) {
-		this.doorCarried.leave(e);
-		e.setWhichSandcIn(null);
+	public void exitInnerWorld(SWActor a) {
+		this.doorCarried.leave(a);
+		a.setWhichSandcIn(null);
 		SWGridController outerUIController = new SWGridController(this.world);
 		SWGridController.setUI(innerUI);
-		e.setMessageRenderer(outerUIController);
-		e.resetMoveCommands(this.world.getEntityManager().whereIs(e));
-		if (e instanceof Player) {
+		a.setMessageRenderer(outerUIController);
+		this.resetMovaCommandToWorld(a, this.world);
+		if (a instanceof Player) {
 			this.playInside = false;
+			((SWGridTextInterface) outerUI).disableBanner();
 			SWGridController.setUI(outerUI);
 
 			SWActor.setScheduler(outerScheduler);

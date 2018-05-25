@@ -38,7 +38,7 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	
 	/**The world this <code>SWActor</code> belongs to.*/
 	protected SWWorld world;
-	
+
 	/**Scheduler to schedule this <code>SWActor</code>'s events*/
 	protected static Scheduler scheduler;
 	
@@ -62,6 +62,9 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	 */
 	public static final int MAX_FORCE = 100;
 	
+	/**
+	 * a reference to which sandcrawler the actor may in
+	 */
 	private Sandcrawler whichSandcIn;
 
 	
@@ -329,10 +332,17 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		this.force += increment;
 	}
 	
+	/**
+	 * switch the controller if the actor entered some other world
+	 */
 	public void setMessageRenderer(MessageRenderer newMessageRenderer) {
 		messageRenderer = newMessageRenderer;
 	}
 	
+	/**
+	 * check if current world is the instance of SWMobileWorld
+	 * @return true if the actor inside the SWMobileWorld, false otherwise
+	 */
 	public boolean insideMobileWorld() {
 		if (this.world instanceof SWMobileWorld) {
 			return true;
@@ -340,14 +350,29 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		return false;
 	}
 	
+	/**
+	 * set the reference to sandcrawler if the actor entered in it
+	 * @param newSandcrawler
+	 */
 	public void setWhichSandcIn(Sandcrawler newSandcrawler) {
 		this.whichSandcIn = newSandcrawler;
 	}
 	
+	/**
+	 * Since the action of exit internal world is intransitive
+	 * thus the SWActor itself will keep this method as it will find 
+	 * the sandcrawler which the actor in, and call the exit method in it
+	 */
 	public void exitMobileWorld() {
 		assert this.insideMobileWorld();
 		this.whichSandcIn.exitInnerWorld(this);
 	}
+	
+
+	protected void setWorld(SWWorld world) {
+		this.world = world;
+	}
+	
 
 	
 	

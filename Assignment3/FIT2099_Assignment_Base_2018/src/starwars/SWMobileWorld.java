@@ -31,7 +31,7 @@ public class SWMobileWorld extends SWWorld {
 		assert iface != null;
 		Droid droid = new Droid(100, iface, this);
 		droid.setSymbol("d");
-		loc = this.getGrid().getLocationByCoordinates(0, 0);
+		loc = this.getGrid().getLocationByCoordinates(1, 0);
 		this.getEntityManager().setLocation(droid, loc);
 		
 	}

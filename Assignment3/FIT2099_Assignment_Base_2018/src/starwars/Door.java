@@ -44,7 +44,7 @@ public class Door {
 		this.outerWorld.getEntityManager().setLocation(e, this.getOuterLoc());
 		this.innerWorld.getEntityManager().remove(e);
 		if (e instanceof SWActor) {
-			((SWActor) e).world = this.outerWorld;
+			((SWActor) e).setWorld(this.outerWorld);
 		}
 	}
 	
@@ -53,7 +53,7 @@ public class Door {
 		this.innerWorld.getEntityManager().setLocation(e, this.getInnerLoc());
 		this.outerWorld.getEntityManager().remove(e);
 		if (e instanceof SWActor) {
-			((SWActor) e).world = this.innerWorld;
+			((SWActor) e).setWorld(this.innerWorld);
 		}
 		
 	}

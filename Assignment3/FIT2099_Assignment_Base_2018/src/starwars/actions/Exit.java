@@ -19,6 +19,7 @@ public class Exit extends SWAction {
 	@Override
 	public void act(SWActor a) {
 		a.exitMobileWorld();
+		a.removeAction(this);
 		// TODO Auto-generated method stub
 
 	}

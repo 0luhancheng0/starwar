@@ -86,11 +86,10 @@ public class SWGridController implements GridController {
 		//this list will store all the commands that SWActor a can perform
 		ArrayList<ActionInterface> cmds = new ArrayList<ActionInterface>();
 
-
-		System.out.println(this.world.getEntityManager().getActionsFor(a));
 		for (SWActionInterface ac : this.world.getEntityManager().getActionsFor(a)) {
-			if (ac.canDo(a))
+			if (ac.canDo(a)) {
 				cmds.add(ac);
+			}
 		}
 		
 		//Get the UI to display the commands to the user and get a selection
