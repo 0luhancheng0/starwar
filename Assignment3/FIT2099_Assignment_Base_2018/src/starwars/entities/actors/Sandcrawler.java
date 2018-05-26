@@ -235,6 +235,11 @@ public class Sandcrawler extends SWActor {
 
 	}
 	
+	/**
+	 * check if the inner door location match the give location
+	 * @param loc <code>SWLocation</code> that is goint to be checked
+	 * @return
+	 */
 	public boolean atTheDoor(SWLocation loc) {
 		return (this.doorCarried.getInnerLoc() == loc);
 	}

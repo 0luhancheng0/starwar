@@ -369,14 +369,19 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 	}
 	
 	/**
-	 * set the world to another world, it may be used when transfering to another world
+	 * set the world to another world, it may be used when transferring to another world
 	 * @param world the new world
 	 */
 	protected void setWorld(SWWorld world) {
 		this.world = world;
 	}
 	
+	/**
+	 * check if a actor is able to exit the door
+	 * @return true if the actor can exit the door, false otherwise
+	 */
 	public boolean canExitDoor() {
+		assert this.insideMobileWorld() : "The actor cannot exit the door if it is not in the internal world";
 		return this.whichSandcIn.atTheDoor((SWLocation) this.world.getEntityManager().whereIs(this));
 	}
 	

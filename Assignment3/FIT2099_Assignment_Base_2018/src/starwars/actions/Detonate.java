@@ -10,7 +10,10 @@ import starwars.SWEntityInterface;
 import starwars.SWWorld;
 
 public class Detonate extends SWAffordance {
-
+	/**
+	 * the <code>DAMAGE_LIST</code> indicate the damage should be taken when 
+	 * the entity is detonated for the targets in different distance
+	 */
 	private static final int[] DAMAGE_LIST = {20, 10, 5};
 
 	
