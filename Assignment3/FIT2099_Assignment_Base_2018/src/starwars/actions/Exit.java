@@ -19,7 +19,8 @@ public class Exit extends SWAction {
 
 	@Override
 	public boolean canDo(SWActor a) {
-		return a.insideMobileWorld();
+		return (a.insideMobileWorld() && a.canExitDoor());
+		
 	}
 
 	@Override

@@ -62,6 +62,9 @@ public class Sandcrawler extends SWActor {
 		innerScheduler = new Scheduler(1, worldCarried);
 		// link the inside world with the door
 		this.doorCarried = new Door(this.world, worldCarried);
+		// since the inner door location won't change during the move, we can initialize it 
+		// in constructor
+		this.doorCarried.setInnerLoc(this.doorCarried.getInnerLocByCoor(0, 0));
 
 	}
 
@@ -69,7 +72,7 @@ public class Sandcrawler extends SWActor {
 	public void act() {
 		// find the location of sandcrawler and set it to the exit point of the door
 		SWLocation loc = (SWLocation) this.world.find(this);
-		this.doorCarried.setInnerLoc(this.doorCarried.getInnerLocByCoor(0, 0));
+		
 		this.doorCarried.setOuterLoc(loc);
 
 		// check if the entity in the same location with sandcrawler can be collected
@@ -230,6 +233,10 @@ public class Sandcrawler extends SWActor {
 
 		}
 
+	}
+	
+	public boolean atTheDoor(SWLocation loc) {
+		return (this.doorCarried.getInnerLoc() == loc);
 	}
 
 }
