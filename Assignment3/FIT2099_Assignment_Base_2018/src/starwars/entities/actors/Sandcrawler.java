@@ -130,7 +130,7 @@ public class Sandcrawler extends SWActor {
 	 * @param destinationWorld
 	 *            the world that the <code>SWActor</code> is moving to
 	 */
-	private void resetMovaCommandToWorld(SWActor a, SWWorld destinationWorld) {
+	private void resetMoveCommandToWorld(SWActor a, SWWorld destinationWorld) {
 		a.resetMoveCommands(destinationWorld.getEntityManager().whereIs(a));
 	}
 
@@ -163,7 +163,7 @@ public class Sandcrawler extends SWActor {
 		SWGridController.setUI(outerUI);
 
 		if (e instanceof SWActor) {
-			this.resetMovaCommandToWorld(((SWActor) e), worldCarried);
+			this.resetMoveCommandToWorld(((SWActor) e), worldCarried);
 			// only the SWActor have force will have ability to leave the sandcrawler
 			// since the the SWActor (like droid) may be collected by sandcrawler, this
 			// checking is necessary
@@ -219,7 +219,7 @@ public class Sandcrawler extends SWActor {
 		SWGridController.setUI(innerUI);
 		// pass the outside controller to a
 		a.setMessageRenderer(outerUIController);
-		this.resetMovaCommandToWorld(a, this.world);
+		this.resetMoveCommandToWorld(a, this.world);
 		if (a instanceof Player) {
 			// set false the flag variable
 			this.playInside = false;
