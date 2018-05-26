@@ -376,6 +376,10 @@ public abstract class SWActor extends Actor<SWActionInterface> implements SWEnti
 		this.world = world;
 	}
 	
+	public boolean canExitDoor() {
+		return this.whichSandcIn.atTheDoor((SWLocation) this.world.getEntityManager().whereIs(this));
+	}
+	
 
 	
 	
