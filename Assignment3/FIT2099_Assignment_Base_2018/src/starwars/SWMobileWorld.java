@@ -18,7 +18,7 @@ public class SWMobileWorld extends SWWorld {
 	 */
 	public SWMobileWorld(int width, int height) {
 		super();
-		super.resizeGrid(width, height);
+		resizeGrid(width, height);
 		
 	}
 	/**
