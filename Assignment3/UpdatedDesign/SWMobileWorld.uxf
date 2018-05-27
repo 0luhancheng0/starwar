@@ -54,7 +54,7 @@ Package::starwars
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
+      <x>940</x>
       <y>470</y>
       <w>30</w>
       <h>150</h>
@@ -76,7 +76,7 @@ Package::starwars
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
+      <x>900</x>
       <y>600</y>
       <w>100</w>
       <h>30</h>
@@ -105,5 +105,27 @@ Package::starwars
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>470</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>600</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SWLocation</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
