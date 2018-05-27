@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>5</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>350</y>
-      <w>490</w>
-      <h>330</h>
+      <x>225</x>
+      <y>250</y>
+      <w>245</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>Sandcrawler
 Package::starwars.entitities.actors
@@ -36,43 +36,43 @@ Package::starwars.entitities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1140</x>
-      <y>320</y>
-      <w>160</w>
-      <h>70</h>
+      <x>465</x>
+      <y>235</y>
+      <w>80</w>
+      <h>35</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>140.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>640</y>
-      <w>130</w>
-      <h>80</h>
+      <x>130</x>
+      <y>395</y>
+      <w>105</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;190.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1140</x>
-      <y>400</y>
-      <w>250</w>
-      <h>30</h>
+      <x>465</x>
+      <y>275</y>
+      <w>125</w>
+      <h>15</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>410</y>
-      <w>310</w>
-      <h>30</h>
+      <x>80</x>
+      <y>280</y>
+      <w>155</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
@@ -80,21 +80,21 @@ Package::starwars.entitities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>330</y>
-      <w>130</w>
-      <h>90</h>
+      <x>170</x>
+      <y>240</y>
+      <w>65</w>
+      <h>45</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;110.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>890</x>
-      <y>220</y>
-      <w>30</w>
-      <h>150</h>
+      <x>340</x>
+      <y>185</y>
+      <w>15</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
@@ -102,10 +102,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>850</x>
-      <y>200</y>
-      <w>100</w>
-      <h>30</h>
+      <x>320</x>
+      <y>175</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>SWActor</panel_attributes>
     <additional_attributes/>
@@ -113,32 +113,21 @@ Package::starwars.entitities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1140</x>
-      <y>650</y>
-      <w>180</w>
-      <h>90</h>
+      <x>465</x>
+      <y>400</y>
+      <w>90</w>
+      <h>45</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>160.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>500</x>
-      <y>450</y>
-      <w>180</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>310</x>
-      <y>490</y>
-      <w>370</w>
-      <h>30</h>
+      <x>50</x>
+      <y>320</y>
+      <w>185</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;350.0;10.0</additional_attributes>
@@ -146,32 +135,32 @@ Package::starwars.entitities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>540</y>
-      <w>190</w>
-      <h>30</h>
+      <x>140</x>
+      <y>345</y>
+      <w>95</w>
+      <h>15</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>380</x>
-      <y>600</y>
-      <w>300</w>
-      <h>30</h>
+      <x>85</x>
+      <y>375</y>
+      <w>150</w>
+      <h>15</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;280.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
-      <y>310</y>
-      <w>100</w>
-      <h>30</h>
+      <x>130</x>
+      <y>210</y>
+      <w>65</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>GridController</panel_attributes>
     <additional_attributes/>
@@ -179,10 +168,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
-      <y>700</y>
-      <w>100</w>
-      <h>30</h>
+      <x>95</x>
+      <y>440</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Door</panel_attributes>
     <additional_attributes/>
@@ -190,21 +179,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
-      <y>450</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Direction</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>280</x>
-      <y>410</y>
-      <w>100</w>
-      <h>30</h>
+      <x>35</x>
+      <y>280</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>GridRenderer</panel_attributes>
     <additional_attributes/>
@@ -212,10 +190,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>490</y>
-      <w>100</w>
-      <h>30</h>
+      <x>5</x>
+      <y>320</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Scheduler</panel_attributes>
     <additional_attributes/>
@@ -223,10 +201,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>540</y>
-      <w>130</w>
-      <h>30</h>
+      <x>80</x>
+      <y>345</y>
+      <w>65</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>MessageRenderer</panel_attributes>
     <additional_attributes/>
@@ -234,10 +212,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>290</x>
-      <y>590</y>
-      <w>100</w>
-      <h>30</h>
+      <x>40</x>
+      <y>370</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Capability</panel_attributes>
     <additional_attributes/>
@@ -245,10 +223,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1250</x>
-      <y>300</y>
-      <w>130</w>
-      <h>30</h>
+      <x>520</x>
+      <y>225</y>
+      <w>65</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>SWEntityInterface</panel_attributes>
     <additional_attributes/>
@@ -256,10 +234,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1370</x>
-      <y>400</y>
-      <w>100</w>
-      <h>30</h>
+      <x>580</x>
+      <y>275</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>SWLocation</panel_attributes>
     <additional_attributes/>
@@ -267,54 +245,32 @@ Package::starwars.entitities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1140</x>
-      <y>450</y>
-      <w>180</w>
-      <h>30</h>
+      <x>465</x>
+      <y>300</y>
+      <w>90</w>
+      <h>15</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1140</x>
-      <y>500</y>
-      <w>250</w>
-      <h>30</h>
+      <x>465</x>
+      <y>380</y>
+      <w>125</w>
+      <h>15</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1140</x>
-      <y>550</y>
-      <w>180</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>160.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1140</x>
-      <y>610</y>
-      <w>250</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>230.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1370</x>
-      <y>610</y>
-      <w>100</w>
-      <h>30</h>
+      <x>580</x>
+      <y>380</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Enter</panel_attributes>
     <additional_attributes/>
@@ -322,10 +278,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1300</x>
-      <y>450</y>
-      <w>110</w>
-      <h>30</h>
+      <x>545</x>
+      <y>300</y>
+      <w>55</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>SWMobileWorld</panel_attributes>
     <additional_attributes/>
@@ -333,32 +289,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1370</x>
-      <y>500</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>SWWorld</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1300</x>
-      <y>550</y>
-      <w>100</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>Team</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1260</x>
-      <y>720</y>
-      <w>100</w>
-      <h>30</h>
+      <x>525</x>
+      <y>435</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Exit</panel_attributes>
     <additional_attributes/>
@@ -366,10 +300,21 @@ Package::starwars.entitities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>670</y>
-      <w>30</w>
-      <h>150</h>
+      <x>255</x>
+      <y>410</y>
+      <w>15</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>410</y>
+      <w>15</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
@@ -377,54 +322,21 @@ Package::starwars.entitities.actors
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>830</x>
-      <y>670</y>
-      <w>30</w>
-      <h>150</h>
+      <x>380</x>
+      <y>410</y>
+      <w>15</w>
+      <h>75</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>970</x>
-      <y>670</y>
-      <w>30</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1100</x>
-      <y>670</y>
-      <w>30</w>
-      <h>150</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
+    <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1050</x>
-      <y>800</y>
-      <w>140</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>SWGridTextInterface</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>920</x>
-      <y>800</y>
-      <w>120</w>
-      <h>30</h>
+      <x>355</x>
+      <y>475</y>
+      <w>60</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>SWGridController</panel_attributes>
     <additional_attributes/>
@@ -432,10 +344,10 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>800</y>
-      <w>100</w>
-      <h>30</h>
+      <x>295</x>
+      <y>475</y>
+      <w>50</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>Patrol</panel_attributes>
     <additional_attributes/>
@@ -443,12 +355,56 @@ Package::starwars.entitities.actors
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>680</x>
-      <y>800</y>
-      <w>100</w>
+      <x>235</x>
+      <y>475</y>
+      <w>50</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>Direction</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>555</x>
+      <y>325</y>
+      <w>90</w>
       <h>30</h>
+    </coordinates>
+    <panel_attributes>EntityManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>465</x>
+      <y>325</y>
+      <w>100</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>485</x>
+      <y>155</y>
+      <w>115</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Move</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>175</y>
+      <w>55</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;150.0</additional_attributes>
   </element>
 </diagram>
