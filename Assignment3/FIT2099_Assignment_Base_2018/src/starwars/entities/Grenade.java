@@ -13,7 +13,6 @@ public class Grenade extends SWEntity {
 	 */
 	public Grenade(MessageRenderer m) {
 		super(m);
-		// TODO Auto-generated constructor stub
 		this.shortDescription = "a grenade";
 		this.longDescription = "an explodable, nice grenade";
 		this.capabilities.add(Capability.EXPLODABLE);

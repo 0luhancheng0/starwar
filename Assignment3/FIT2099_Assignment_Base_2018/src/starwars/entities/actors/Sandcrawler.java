@@ -217,17 +217,21 @@ public class Sandcrawler extends SWActor {
 	public void exitInnerWorld(SWActor a) {
 		this.doorCarried.leave(a);
 		a.setWhichSandcIn(null);
+		
 		// create the UIcontroller for outside world
 		SWGridController outerUIController = new SWGridController(this.world);
 		SWGridController.setUI(innerUI);
+		
 		// pass the outside controller to a
 		a.setMessageRenderer(outerUIController);
 		this.resetMoveCommandToWorld(a, this.world);
 		if (a instanceof Player) {
+			
 			// set false the flag variable
 			this.playInside = false;
 			((SWGridTextInterface) outerUI).disableBanner();
 			SWGridController.setUI(outerUI);
+			
 			// switch back the scheduler
 			SWActor.setScheduler(outerScheduler);
 

@@ -14,7 +14,6 @@ public class Exit extends SWAction {
 	public Exit(MessageRenderer m) {
 		super(m);
 		this.priority = 1;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -27,19 +26,16 @@ public class Exit extends SWAction {
 	public void act(SWActor a) {
 		a.exitMobileWorld();
 		a.removeAction(this);
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public int getDuration() {
-		// TODO Auto-generated method stub
 		return 1;
 	}
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return "Exit the current world";
 	}
 
