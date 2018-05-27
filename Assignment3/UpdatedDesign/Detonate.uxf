@@ -66,7 +66,7 @@ Package::starwars.actions
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
+      <x>660</x>
       <y>600</y>
       <w>120</w>
       <h>30</h>
@@ -121,7 +121,7 @@ Package::starwars.actions
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>790</x>
+      <x>710</x>
       <y>480</y>
       <w>30</w>
       <h>140</h>
@@ -150,5 +150,27 @@ Package::starwars.actions
     </coordinates>
     <panel_attributes>SWAffordance</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
+      <y>600</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>EntityManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>480</y>
+      <w>30</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

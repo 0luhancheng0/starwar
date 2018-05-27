@@ -54,17 +54,6 @@ Package::starwars
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1020</x>
-      <y>410</y>
-      <w>190</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>800</x>
       <y>470</y>
       <w>30</w>
@@ -105,5 +94,16 @@ Package::starwars
     </coordinates>
     <panel_attributes>MessageRenderer</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>410</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
